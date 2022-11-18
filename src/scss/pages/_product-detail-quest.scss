@@ -1,0 +1,610 @@
+// Change thumbnail border colour
+.viewer--q1 .carousel-main-nav .carousel-cell.is-nav-selected img {
+	border-color: var(--quest-q1);
+}
+
+.viewer--q2 .carousel-main-nav .carousel-cell.is-nav-selected img {
+	border-color: var(--quest-q2);
+}
+
+.viewer--q3 .carousel-main-nav .carousel-cell.is-nav-selected img {
+	border-color: var(--quest-q3);
+}
+
+.viewer {
+
+	// Where to buy button colours to match Quest
+	&__button {
+
+		&--q1 {
+            
+            &:link, a:visited {
+                background: var(--quest-q1);
+                border-color: var(--quest-q1);
+            }
+
+            &:hover {
+                color: var(--quest-q1);
+                background: white;
+            }
+        }
+
+		&--q2 {
+            
+            &:link, a:visited {
+                background: var(--quest-q2);
+                border-color: var(--quest-q2);
+            }
+
+            &:hover {
+                color: var(--quest-q2);
+                background: white;
+            }
+        }
+
+		&--q3 {
+            
+            &:link, a:visited {
+                background: var(--quest-q3);
+                border-color: var(--quest-q3);
+            }
+
+            &:hover {
+                color: var(--quest-q3);
+                background: white;
+            }
+        }
+	}
+}
+
+
+.space-intro {
+	background: url(/_/img/products/childrens-mattresses/quest/bg-space.jpg) no-repeat center;
+	background-size: cover;
+	color: white;
+
+	&__row {
+		text-align: center;
+	}
+
+	&__icon {
+		fill: white;
+		width: 37rem;
+	}
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+        align-items: center;
+        margin: 2.5rem 0 1rem 0;
+    }
+    
+    &__copy {
+        text-align: left;
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+
+        &:not(:last-child) {
+            padding-bottom: 3rem;
+        }
+    }
+
+    &__arrow-icon {
+        fill: white;
+        width: 5rem;
+    }
+
+    @include breakpointAt(mobileNav) {
+
+        &__icon {
+            width: 30rem;
+        }
+
+        &__wrap {
+            gap: 3rem;
+        }
+
+        // Just add a little space for the arrow
+        &__copy {
+            margin-bottom: 2rem;
+        }
+    }
+
+    @include breakpointAt(small) {
+
+        &__wrap {
+            grid-template-columns: 1fr;
+        }
+
+        &__img {
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    @include breakpointAt(smallest) {
+       
+        &__img {
+            width: 100%;
+        }
+    }
+}
+
+
+.mattress-title {
+    background: var(--quest-q1);
+    color: white;
+    text-align: center;
+
+    &--q2 {
+        background: var(--quest-q2);
+    }
+
+    &--q3 {
+        background: var(--quest-q3);
+    }
+
+    &__h4 {
+        font-size: 15rem;
+        font-weight: $bold;
+        line-height: 80%;
+        margin-bottom: 2rem;
+    }
+
+    &__h5 {
+        font-weight: $bold;
+        font-size: 2.7rem;
+        margin-bottom: 1.5rem;
+
+        &--main {
+            font-size: 3.2rem;
+            display: block;
+            text-transform: uppercase;
+        }
+    }
+
+    &__copy {
+        max-width: 50rem;
+        line-height: 2.2rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        &--long {
+            max-width: 60rem;
+        }
+    }
+
+    @include breakpointAt(small) {
+       
+        &__h5 {
+            
+            &--rwd-break {
+                display: block;
+            }
+        }
+    }
+}
+
+
+.comfort-tech {
+    color: var(--quest-q1);
+   
+    &__h5 { 
+        color: inherit;
+        font-size: 2.5rem;
+        font-weight: $semi-bold;
+
+        &--q2 {
+            color: var(--quest-q2);
+        }
+
+        &--q3 {
+            color: var(--quest-q3);
+        }
+    }
+}
+
+
+.mattress-cross-section {
+
+    color: white;
+
+    &--q1 {
+        background: linear-gradient(180deg, #fff 35%, var(--quest-q1) 0);
+    }
+
+    &--q2 {
+        background: linear-gradient(180deg, #fff 35%, var(--quest-q2) 0);
+    }
+
+    &--q3 {
+        background: linear-gradient(180deg, #fff 35%, var(--quest-q3) 0);
+    }
+
+    &__number {
+
+        &--q1 {
+            color: var(--quest-q1);
+            font-weight: $medium;
+        }
+
+        &--q2 {
+            color: var(--quest-q2);
+            font-weight: $medium;
+        }
+
+        &--q3 {
+            color: var(--quest-q3);
+            font-weight: $medium;
+        }
+    }
+
+    &__note-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: .8rem 0 3rem;
+    }
+
+    &__note {
+        font-weight: $medium;
+        font-size: 1.7rem;
+    }
+
+    &__icon {
+        fill: currentColor;
+        width: 3.8rem;
+        height: 3.8rem;
+        margin-left: 1.3rem;
+    }
+
+    @include breakpointAt(smallMedium) {
+
+        &--q1 {
+            background: linear-gradient(180deg, #fff 27%, var(--quest-q1) 0);
+        }
+
+        &--q2 {
+            background: linear-gradient(180deg, #fff 27%, var(--quest-q2) 0);
+        }
+
+        &--q3 {
+            background: linear-gradient(180deg, #fff 27%, var(--quest-q3) 0);
+        }
+    }
+
+    @include breakpointAt(small) {
+
+        &--q1 {
+            background: linear-gradient(180deg, #fff 22%, var(--quest-q1) 0);
+        }
+
+        &--q2 {
+            background: linear-gradient(180deg, #fff 22%, var(--quest-q2) 0);
+        }
+
+        &--q3 {
+            background: linear-gradient(180deg, #fff 22%, var(--quest-q3) 0);
+        }
+    }
+
+    @include breakpointAt(special) {
+
+        &--q1 {
+            background: linear-gradient(180deg, #fff 18%, var(--quest-q1) 0);
+        }
+
+        &--q2 {
+            background: linear-gradient(180deg, #fff 18%, var(--quest-q2) 0);
+        }
+
+        &--q3 {
+            background: linear-gradient(180deg, #fff 18%, var(--quest-q3) 0);
+        }
+    }
+}
+
+
+.quest-eco-features {
+    border-bottom: 1.8rem solid var(--quest-q1);
+    text-align: center;
+    color: var(--quest-q1);
+    font-weight: $light;
+
+    &--q2 {
+        color: var(--quest-q2);
+        border-color: var(--quest-q2);
+    }
+
+    &--q3 {
+        color: var(--quest-q3);
+        border-color: var(--quest-q3);
+    }
+
+    &__title {
+        max-width: 70rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__intro-copy {
+        font-weight: inherit;
+        max-width: 75rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        &:not(:last-child) {
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__h4 {
+        font-size: 3rem;
+        font-weight: $bold;
+        text-transform: uppercase;
+        color: white;
+        background-color: var(--quest-q1);
+        border-radius: 50rem;
+        padding: 1rem 0;
+        max-width: 45rem;
+        margin: 5rem auto 5rem auto;
+        position: relative;
+
+        &--q2 {
+            background-color: var(--quest-q2);
+        }
+    
+        &--q3 {
+            background-color: var(--quest-q3);
+        }
+        
+        // Comfort header
+        &::before, &::after {
+            content: "";
+            width: 5rem;
+            height: 5rem;
+            @include center-it-vertically;
+            background: url(/_/img/products/childrens-mattresses/quest/icon-quest-cloud.svg) center no-repeat;
+            background-size: contain;
+        }
+
+        &::before {
+            left: 14%;
+        }
+
+        &::after {
+            right: 14%;
+        }
+
+        // Health header
+        &--health {
+            
+            &::before, &::after {
+                width: 4rem;
+                height: 4rem;
+                background: url(/_/img/products/childrens-mattresses/quest/icon-quest-heart.svg) center no-repeat;
+                background-size: contain;
+            }
+
+            &::before {
+                left: 20%;
+            }
+    
+            &::after {
+                right: 20%;
+            }
+        }
+
+        // Sustainablity header
+        &--sustain {
+            
+            &::before, &::after {
+                width: 4rem;
+                height: 4rem;
+                background: url(/_/img/products/childrens-mattresses/quest/icon-quest-leaves.svg) center no-repeat;
+                background-size: contain;
+            }
+
+            &::before {
+                left: 7%;
+            }
+    
+            &::after {
+                right: 7%;
+            }
+        }
+    }
+
+    @include breakpointAt(mobileNav) {
+
+        &__title {
+            max-width: 57rem;
+        }
+    }
+}
+
+
+.quest-icons {
+    
+    &__list {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 90rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        &--two-up {
+            max-width: 60rem;
+        }
+
+        &--four-up {
+            max-width: 97rem;
+        }
+
+        &--no-top-mar {
+            margin-top: 0;
+        }
+
+        &--q2 {
+            color: var(--quest-q2);
+        }
+
+        &--q3 {
+            color: var(--quest-q3);
+        }
+    }
+
+    &__list-item {
+        flex-basis: 100%; // Make all children same width regardless of their content
+        text-align: center;
+        color: currentColor;
+    }
+
+    &__icon {
+        width: 13rem;
+        margin-bottom: 1rem;
+    }
+
+    &__copy {
+        font-weight: $light;
+        width: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @include breakpointAt(mobileNav) {
+
+        &__list {
+        
+            &--four-up {
+                flex-wrap: wrap;
+                max-width: 60rem;
+            }
+        }
+
+        &__list-item {
+
+            &--four-up {
+                flex-basis: 50%;
+
+                // Select first two icons and give them bottom margin
+                &:nth-child(-n+2) {
+                    margin-bottom: 4rem;
+                }
+            }
+        }
+    }
+
+    @include breakpointAt(small) {
+
+        &__list {
+            flex-wrap: wrap;
+        }
+
+        &__list-item {
+            flex-basis: 50%;
+
+            &--three-up {
+                
+                &:not(:last-child) {
+                    margin-bottom: 4rem;
+                }
+            }
+        }
+    }
+}
+
+
+.eco-e-fibre {
+    background: url(/_/img/products/childrens-mattresses/quest/bg-space.jpg) center bottom no-repeat;
+    background-size: cover;
+    color: white;
+    position: relative;
+    text-align: center;
+
+    &::before {
+        content: "";
+        width: 70rem;
+        height: 67rem;
+        background: url(/_/img/products/childrens-mattresses/quest/earth.png) center bottom no-repeat;
+        background-size: contain;
+        @include center-it;
+        bottom: 0;
+    }
+
+    &__h5 {
+        font-size: 2.8rem;
+        font-weight: $medium;
+        margin-bottom: 4rem;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        max-width: 70rem;
+        margin: 0 auto 4rem auto;
+    }
+
+    &__icon {
+        fill: currentColor;
+        width: 15rem;
+    }
+
+    &__copy {
+        max-width: 55rem;
+        margin: 0 auto;
+        padding-bottom: 10rem;
+    }
+
+    @include breakpointAt(mobileNav) {
+
+        &__copy {
+            padding-bottom: 12rem;
+        }
+    }
+
+    @include breakpointAt(small) {
+
+        &::before {
+            width: 60rem;
+        }
+
+        &__h5 {
+            
+            &--rwd-break {
+                display: block;
+                line-height: 3.6rem;
+            }
+        }
+
+        &__icon {
+            width: 13rem;
+        }
+    }
+
+    @include breakpointAt(smaller) {
+        
+        &::before {
+            width: 50rem;
+        }
+
+        &__h5 {
+            margin-bottom: 3rem;
+        }
+
+        &__list {
+            margin-bottom: 3rem;
+        }
+
+        &__icon {
+            width: 10rem;
+        }
+
+        &__copy {
+            padding-bottom: 8rem;
+        }
+    }
+}

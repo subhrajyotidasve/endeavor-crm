@@ -1,0 +1,202 @@
+.client-header {
+    background: url(/_/img/private/client-login/chevron.svg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    padding-top: 6rem;
+    padding-bottom: 22rem;
+
+    &__h1 {
+        font-size: 5rem;
+        font-weight: $bold;
+        padding-bottom: 1.25rem;
+    }
+
+    &__copy {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        font-weight: $book;
+        max-width: 60rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 3.5rem;
+
+        &--link {
+
+            &:link, &:visited {
+                color: currentColor;
+                font-weight: $medium;
+                border: none;
+            }
+        }
+
+        &--footnote {
+            font-size: 1.2rem;
+            max-width: 50rem;
+        }
+    }
+
+    &__button {
+        @include button-pill(1.7rem, white, 1.35rem 3.5rem 1.35rem 3.5rem, white, #1fbbda, #1fbbda, white, white);
+        font-weight: $medium;
+        margin-bottom: 3.5rem;
+
+        &:link, &:visited {
+            font-size: 1.7rem;
+        }
+    }
+
+    @include breakpointAt(mobileNav) {
+        
+        &__button {
+            display: block;
+        }
+    }
+}
+
+
+.cl-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(33rem, 1fr));
+    grid-gap: 4rem;
+    margin-top: -24rem;
+    margin-bottom: 8rem;
+
+    &__card {
+        box-shadow: 0 .4em 3rem 0 rgba(10, 14, 29, .2), 0 .8rem 6rem 0 rgba(10, 14, 29, .2);
+        background: white;
+        border-radius: .6rem;
+        overflow: hidden;
+        text-align: center;
+        position: relative;
+
+        &--new {
+        
+            &::before {
+                content:"NEW RANGE";
+                color:#fff;
+                border: .2rem solid #fff;
+                font-size: 1.5rem;
+                font-weight: $medium;
+                padding: 1rem 1.5rem;
+                background: #1fbbda;
+                position: absolute;
+                left: 1.25rem;
+                top: 1.25rem;
+                z-index: 5;
+                border-radius: .4rem;
+            }
+        }
+
+        &--kids {
+
+            &::before {
+                background: #ff4500;
+                right: 1.25rem;
+                left: auto;
+            }
+        }
+    }
+
+    &__img {
+        margin-bottom: 2rem;
+    }
+
+    &__h2 {
+        font-size: 2.3rem;
+        font-weight: $medium;
+        line-height: 3rem;
+
+        &--sub {
+            font-weight: $book;
+            font-size: 2.1rem;
+            display: block;
+            color: #969696;
+            padding-top: .25rem;
+        }
+    }
+
+    &__button {
+        @include button-pill(1.7rem, #0cc6de, 1.2rem 2rem 1.2rem 2rem, #0cc6de, white, white, #0cc6de, #0cc6de);
+        font-weight: $medium;
+        margin: 2.5rem;
+
+        &:link, &:visited {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__h3 {
+        font-size: 1.6rem;
+        color: #969696;
+
+        &--stroke {
+            position: relative;
+            display: inline-block;
+
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                border-bottom: .2rem solid #dcdcdc;
+                width: 115%;
+                margin: 0 1.2rem;
+            }
+
+            &::before {
+                right: 100%;
+            }
+
+            &::after {
+                left: 100%;
+            }
+        }
+
+        &--short {
+            
+            &::before, &::after {
+                width: 80%;
+            }
+        }
+    }
+
+    &__copy {
+        font-size: 1.2rem;
+        color: #969696;
+        padding: 2.5rem 2.5rem 3.5rem;
+    }
+
+    @include breakpointAt(mobileNav) {
+
+        &__button {
+            
+            &:link, &:visited {
+                font-size: 1.7rem;
+            }
+        }
+
+        &__h3 {
+            font-size: 2rem;
+
+            &--stroke {
+                
+                &::before, &::after {
+                    width: 105%;
+                }
+            }
+
+            &--short {
+               
+                &::before, &::after {
+                    width: 60%;
+                }
+            }
+        }
+
+        &__copy {
+            font-size: 1.4rem;
+        }
+    }
+}

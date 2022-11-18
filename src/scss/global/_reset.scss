@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+    line-height: 1.15;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+article, aside, footer, header, nav, section {
+    display: block;
+}
+
+button, input, select, textarea, optgroup {
+    font-family: inherit;
+    line-height: 1.15;
+    margin: 0;
+}
+
+sub, sup {
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.35em;
+}
+
+// Form inconsistencies / clear horrid default browser styles
+label {
+	cursor: pointer;
+}
+
+input, textarea {
+    resize: none;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	min-height: 100%;
+}
+
+fieldset, figure {
+    margin: 0;
+    padding: 0;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	-webkit-appearance: button;
+}
+
+legend {
+   padding: 0;
+}
+
+fieldset {
+    border: none;
+}
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+   height: auto;
+}
+
+[type='search'] {
+   -webkit-appearance: textfield;
+   outline-offset: -2px;
+}
+
+[type='search']::-webkit-search-decoration {
+   -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+   -webkit-appearance: button;
+   font: inherit;
+}

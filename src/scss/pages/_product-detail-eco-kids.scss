@@ -1,0 +1,324 @@
+// Eco section of the Simply Kids product detail page
+.bottle {
+    background-color: #f6f1ed;
+    border-bottom: .4rem dotted $text;
+    position: relative;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 22rem;
+        background: url(/_/img/products/childrens-mattresses/simply-kids/bottles.png) left bottom repeat-x;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 10;
+
+        @include breakpointAt(superWide) {
+            height: 29rem;
+        }
+
+        @include breakpointAt(mobileNav) {
+            height: 10rem;
+        }
+    }
+
+    &__row {
+        position: relative;
+    }
+
+    &__flex-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @include breakpointAt(mobileNav) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    &__copy-wrap {
+        flex-basis: 75rem;
+        padding-right: 2.5rem;
+        order: 1;
+
+        @include breakpointAt(mobileNav) {
+            order: 2;
+        }
+    }
+
+    &__icon-wrap {
+        order: 2;
+        width: 35rem;
+
+        @include breakpointAt(mobileNav) {
+            order: 1;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+    }
+
+    &__icon {
+        fill: $text;
+        padding-bottom: 1rem;
+    }
+
+    &__icon-copy {
+        font-size: 1.8rem;
+        font-weight: $book;
+        line-height: 2.4rem;
+        padding-left: 1.5rem;
+
+        @include breakpointAt(mobileNav) {
+            padding-left: 0;
+
+            &--rwd-break {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__h1 {
+        font-size: $main-head;
+        line-height: 3.3rem;
+        font-weight: $bold;
+
+        &--rwd-break {
+            display: inline-block;
+        }
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        font-weight: $book;
+        line-height: $main-copy-height;
+        padding-bottom: 2.5rem;
+    }
+
+    &__h2 {
+        font-size: $main-head;
+        line-height: 3.3rem;
+        font-weight: $bold;
+        padding-top: 2.5rem;
+
+        &--emphasise {
+            color: $sustainable;
+            display: block;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        z-index: 5;
+        bottom: 6rem;
+        right: 2.5rem;
+        width: 43rem;
+        height: auto;
+
+        @include breakpointAt(xlarge) {
+            width: 41rem;
+        }
+
+        @include breakpointAt(medium) {
+            width: 35rem;
+            //bottom: 0;
+        }
+
+        @include breakpointAt(mobileNav) {
+            display: none;
+        }
+    }
+
+    &__animation {
+        max-width: 67%;
+        margin-bottom: 18rem;
+        position: relative;
+
+        @include breakpointAt(superWide) {
+            margin-bottom: 22rem;
+        }
+
+        @include breakpointAt(mobileNav) {
+            max-width: 100%;
+            margin-bottom: 6rem;
+        }
+
+        @include breakpointAt(small) {
+            padding-top: 7rem;
+        }
+    }
+
+    &__odometer-wrap {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: -2rem;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.65);
+        padding: 1.75rem 2.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 .6rem rgba(0, 0, 0, 0.3);
+        border: .2rem solid rgba(255, 255, 255, 0.7);
+
+        @include breakpointAt(large) {
+            right: 1rem;
+        }
+
+        @include breakpointAt(medium) {
+            padding: 1rem 1.5rem;
+            right: -2rem;
+        }
+
+        @include breakpointAt(mobileNav) {
+            right: 1rem;
+        }
+    }
+
+    &__h3 {
+        font-size: $minor-head;
+        line-height: 3.3rem;
+        font-weight: $bold;
+        padding-bottom: .5rem;
+    }
+}
+
+#odometer {
+    font-size: 4.5rem;
+
+    @include breakpointAt(smaller) {
+        font-size: 3rem;
+    }
+}
+
+// Packaging section
+.packaging {
+    position: relative;
+    background-color: #f6f1ed;
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 8.8rem;
+        background: url(/_/img/products/childrens-mattresses/simply-kids/bottles-crushed.png) left top repeat-x;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+
+        @include breakpointAt(superWide) {
+            height: 13rem;
+        }
+
+        @include breakpointAt(mobileNav) {
+            height: 5rem;
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @include breakpointAt(mobileNav) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__copy-wrap {
+        flex-basis: 70rem;
+        padding-right: 2.5rem;
+    }
+
+    &__h1 {
+        font-size: $main-head;
+        line-height: 3.3rem;
+        font-weight: $bold;
+        padding-top: 12rem;
+        color: #0091c9;
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        font-weight: $book;
+        line-height: $main-copy-height;
+        padding-bottom: 2.5rem;
+    }
+
+    &__h2 {
+        font-size: $main-head;
+        line-height: 3.3rem;
+        font-weight: $bold;
+        padding-top: 2.5rem;
+        color: $sustainable;
+
+        &--break {
+            display: block;
+        }
+    }
+
+    &__img {
+        width: 53rem;
+        height: auto;
+        margin-top: 10rem;
+        margin-bottom: 3rem;
+
+        @include breakpointAt(mobileNav) {
+            margin-top: -2rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__more-info {
+        text-align: center;
+        padding-bottom: 6rem;
+    }
+
+    &__flex-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__more-info-icon-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 4rem;
+    }
+
+    &__more-info-icon-wrap {
+        background: $text;
+        padding: 1.5rem;
+        border-radius: 50rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__more-info-icon {
+        width: 6rem;
+        height: auto;
+        fill: #fff;
+    }
+
+    &__more-info-icon-h3 {
+        font-size: 2.4rem;
+        font-weight: $bold;
+        padding-bottom: $under-header;
+    }
+
+    &__more-info-copy {
+        font-size: $secondary-copy;
+        font-weight: $book;
+        line-height: $sec-copy-height;
+    }
+
+    &__more-info-link {
+        @include button-pill(1.8rem, $footer-dark, 1.35rem 3.5rem 1.35rem 3.5rem, $footer-dark, #fff, rgba(255, 255, 255, 0.7), $text, $footer-dark);
+
+        &--rwd-break {
+            display: inline-block;
+        }
+    }
+}

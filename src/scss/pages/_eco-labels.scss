@@ -1,0 +1,570 @@
+.banner {
+
+    &--eco {
+        background: #155d20 url('/_/img/support/eco-labels/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    &__h1 {
+
+        &--eco {
+            font-size: 9rem;
+            font-weight: $black;
+            line-height: 9rem;
+            text-shadow: .4rem .4rem .8rem rgba(0, 0, 0, .7);
+            padding: 14rem 0;
+        }
+    }
+}
+
+
+.notes {
+    text-align: center;
+    margin-top: -3.5rem;
+    position: relative;
+    margin-bottom: 6rem;
+
+    &__h2 {
+        background-color: $footer-dark;
+        color: white;
+        font-size: 3.2rem;
+        font-weight: $medium;
+        padding: 1.25rem 2.5rem;
+        margin-bottom: 2.5rem;
+
+        &--rwd-break {
+            display: inline-block;
+        }
+    }
+}
+
+
+.scan-message {
+    text-align: center;
+    background-color: $accent-teal;
+    color: white;
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+    position: relative;
+
+    &__h3 {
+        text-transform: uppercase;
+        font-size: 2.2rem;
+        font-weight: $medium;
+        padding-bottom: .5rem;
+
+        &--rwd-break {
+            display: inline-block;
+        }
+    }
+
+    &__copy {
+        font-size: 2rem;
+
+        &--rwd-break {
+            display: inline-block;
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 4rem;
+        height: 2.5rem;
+        background: url(/_/img/svg/icon-arrow.svg) center top no-repeat;
+        background-size: contain;
+        position: absolute;
+	    left: 50%;
+        bottom: -6.25rem;
+	    transform: translate(-50%, 0);
+        z-index: 10;
+    }
+}
+
+
+.bg-graphic {
+    background: url(/_/img/support/eco-labels/central-banner.jpg) center top no-repeat;
+    background-size: cover;
+    border-bottom: 1.8rem solid #009bb9;
+    padding-bottom: 14rem;
+}
+
+
+.headed-content {
+    text-align: center;
+    padding-top: 9rem;
+
+    &:not(:first-child) {
+        padding-top: 7.5rem;
+    }
+
+    &--grey {
+        
+        &:not(:first-child) {
+            padding-top: 5rem;
+        }
+
+        &:last-child {
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__wrap {
+        background: rgba(255, 255, 255, .75);
+        padding-bottom: 3.5rem;
+
+        &--with-table {
+            box-shadow: 0 0 0 .2rem $accent-teal;
+            padding-bottom: 2rem;
+        }
+
+        &--less-opaque {
+            background: rgba(255, 255, 255, .8);
+        }
+
+        &--eco {
+            box-shadow: 0 0 0 .2rem $eco-green;
+            padding-bottom: 2rem;
+        }
+
+        &--grey {
+            background-color: #e5e5e5;
+        }
+    }
+
+    &__h3 {
+        background-color: $accent-teal;
+        color: white;
+        font-size: 3rem;
+        font-weight: $medium;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin-bottom: 2.5rem;
+
+        &--eco {
+            background-color: $eco-green;
+            margin-bottom: 4rem;
+        }
+
+        &--grey {
+            background-color: $footer-dark;
+            position: relative;
+
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                background-color: white;
+                width: 4rem;
+                height: 4rem;
+                @include center-it-vertically;
+                background: url(/_/img/support/eco-labels/eco-recycle.svg) center no-repeat;
+                background-size: contain;
+            }
+
+            &::before {
+                left: 26.5%;
+            }
+
+            &::after {
+                right: 26.5%;
+            }
+        }
+
+        &--where {
+                
+            &::before, &::after {
+                background: url(/_/img/support/eco-labels/eco-pin-recycle.svg) center no-repeat;
+                background-size: contain;
+            }
+
+            &::before {
+                left: 24%;
+            }
+
+            &::after {
+                right: 24%;
+            }
+        }
+
+        &--watch {
+                
+            &::before, &::after {
+                background: url(/_/img/support/eco-labels/eco-garbage.svg) center no-repeat;
+                background-size: contain;
+            }
+
+            &::before {
+                left: 25%;
+            }
+
+            &::after {
+                right: 25%;
+            }
+        }
+    }
+
+    &__copy {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+
+        &:not(:last-child) {
+            padding-bottom: 2.5rem;
+        }
+
+        &--rwd-break {
+            display: block;
+        }
+
+        &--eco {
+            color: $eco-green;
+            padding-top: 3.5rem;
+        }
+
+        &--emphasis {
+            font-weight: $bold;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        border-bottom: none;
+        font-weight: $bold;
+        color: $accent-teal;
+
+        &--black-link {
+            color: currentColor;
+        }
+    }
+
+    &__list {
+        margin: 2.5rem auto 0 auto;
+        max-width: 70rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5rem;
+    }
+
+    &__icon {
+        margin-bottom: 1.5rem;
+        width: 10rem;
+    }
+
+    &__h4 {
+        font-size: 2.3rem;
+        font-weight: $medium;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin-top: 3.5rem;
+        background-color: rgba(221, 219, 220, .6);
+        border-bottom: .15rem solid #ccc;
+    }
+
+    &__table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        font-size: 1.4rem;
+    }
+
+    &__table-head {
+        background-color: rgb(226, 225, 225);
+        
+        th {
+            padding: 1rem 0;
+            font-size: 1.6rem;
+            font-weight: $medium;
+        }
+    }
+
+    &__table-row {
+        
+        td {
+            padding: 1.25rem 0 1rem 0;
+        }
+    }
+
+    &__eco-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+        max-width: 70rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__svg {
+        width: 20rem;
+        fill: $eco-green;
+    }
+}
+
+
+.feel-good {
+    border-bottom: 1.8rem solid #009bb9;
+    text-align: center;
+    padding: 6rem 0 4rem 0;
+
+    &__logo {
+        width: 62rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__copy {
+        max-width: 82rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        &:first-of-type {
+            font-weight: $medium;
+        }
+
+        &:not(:last-child) {
+            padding-bottom: 2.5rem;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 7rem;
+        margin-top: 4rem;
+    }
+
+    &__h3 {
+        font-size: 3rem;
+        font-weight: $bold;
+
+        &--emphasis {
+            color: $accent-teal;
+        }
+
+        &--emphasis-eco {
+            color: $eco-green;   
+        }
+    }
+
+    &__img {
+        height: 12rem;
+        margin: 3rem 0;
+    }
+
+    &__svg {
+        fill: $accent-teal;
+        height: 12rem;
+        margin: 3rem 0;
+
+        &--eco {
+            fill: $eco-green;
+        }
+    }
+
+    &__list-copy {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}
+
+
+@include breakpointAt(mobileNav) {
+
+    .banner {
+
+        &--eco {
+            text-align: center;
+        }
+
+        &__h1 {
+
+            &--eco {
+                font-size: 6rem;
+                line-height: 6rem;
+                padding: 10rem 0;
+            }
+        }
+    }
+
+    .headed-content {
+        
+        &__eco-list {
+            gap: 2.5rem;
+        }
+
+        &__svg {
+            width: 15rem;
+        }
+
+        &__h4 {
+            margin-top: 0;
+        }
+
+    }
+
+    .bg-graphic {
+        padding-bottom: 8rem;
+    }
+
+    .feel-good {
+
+        &__list {
+            display: block;
+        }
+
+        &__list-item {
+
+            &:not(:last-child) {
+                margin-bottom: 4rem;
+            }
+        }
+
+        &__svg {
+            margin: 1.5rem 0;
+        }
+
+        &__list-copy {
+            max-width: 50rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+
+@include breakpointAt(small) {
+
+    .banner {
+
+        &__h1 {
+
+            &--eco {
+                font-size: 4.5rem;
+                line-height: 4.5rem;
+                padding: 8rem 0;
+            }
+        }
+    }
+
+    .headed-content {
+
+        &__list {
+            display: block;
+        }
+
+        &__list-item {
+
+            &:not(:last-child) {
+                margin-bottom: 4rem;
+            }
+        }
+
+        &__icon {
+            width: 15rem;
+        }
+
+        &__eco-list {
+            display: block;
+        }
+
+        &__eco-list-item {
+            
+            &:not(:last-child) {
+                margin-bottom: 4rem;
+            }
+        }
+
+        &__svg {
+            width: 25rem;
+        }
+
+        &__h3 {
+
+            &--grey {
+                
+                &::before {
+                    left: 18%;
+                }
+            
+                &::after {
+                    right: 18%;
+                }
+            }
+
+            &--where {
+        
+                &::before {
+                    left: 12%;
+                }
+            
+                &::after {
+                    right: 12%;
+                }
+            }
+            
+            &--watch {
+                    
+                &::before {
+                    left: 15%;
+                }
+            
+                &::after {
+                    right: 15%;
+                }
+            }
+        }
+    }
+
+    .feel-good {
+
+        &__img {
+            height: 15rem;
+        }
+    
+        &__svg {
+            height: 15rem;
+        }
+    }
+}
+
+
+@include breakpointAt(special) {
+
+
+    .headed-content {
+
+        &__h3 {
+
+            &--grey {
+                
+                &::before {
+                    left: 11%;
+                }
+            
+                &::after {
+                    right: 11%;
+                }
+            }
+
+            &--where {
+        
+                &::before {
+                    left: 5%;
+                }
+            
+                &::after {
+                    right: 5%;
+                }
+            }
+            
+            &--watch {
+                    
+                &::before {
+                    left: 9%;
+                }
+            
+                &::after {
+                    right: 9%;
+                }
+            }
+        }
+    }
+}

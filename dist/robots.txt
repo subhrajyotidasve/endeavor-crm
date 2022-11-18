@@ -1,0 +1,3 @@
+# robots.txt file for www.jaybe-dev.com
+User-agent: *
+Disallow: /

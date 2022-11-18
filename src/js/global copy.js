@@ -1,0 +1,15 @@
+@codekit-append "jquery.js";
+@codekit-append "cookie.js";
+@codekit-append "flickity.js";
+@codekit-append "preloader.js";
+@codekit-append "mixitup.js";
+@codekit-append "mixitup-multifilter.js";
+@codekit-append "magnific.js";
+@codekit-append "validate.js";
+@codekit-append "list.js";
+@codekit-append "odometer.js";
+@codekit-append "nanogallery.js";
+@codekit-append "litepicker.js";
+@codekit-append "jaybe.js";
+@codekit-append "jaybe-new.js";
+@codekit-append "functions.js";

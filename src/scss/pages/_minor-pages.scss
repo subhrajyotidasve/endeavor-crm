@@ -1,0 +1,493 @@
+// Styles for minor pages such as the 404, careers and privacy policy etc
+.banner {
+
+    &--jay-be-videos {
+        background: url('/_/img/support/jay-be-videos/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+    &--contact {
+        background: url('/_/img/support/contact/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+    &--request {
+        background: url('/_/img/products/sofa-beds/request/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+    &--404 {
+        background: url('/_/img/404/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+    &--cookie {
+        background: url('/_/img/policies/cookie/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+    &--returns {
+        background: url('/_/img/policies/returns/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+    &--delivery {
+        background: url('/_/img/policies/delivery/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+    &--privacy {
+        background: url('/_/img/policies/privacy/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+    &--environmental {
+        background: url('/_/img/policies/environmental/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+    &--ethical {
+        background: url('/_/img/policies/ethical/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+    &--client {
+        background: url('/_/img/private/client-login/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+    &--commercial {
+        background: url('/_/img/private/commercial-login/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+    &--careers {
+        background: url('/_/img/careers/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+    &--the-position {
+        background: $accent-teal;
+    }
+
+    &--usa {
+        background: url('/_/img/usa/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+}
+
+.lower-banner {
+
+    &--jay-be-videos {
+        background: $selection-colour;
+        text-align: center;
+    }
+}
+
+.videos {
+
+    &__flex-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__thumbs {
+        position: relative;
+        display: block;
+        @include trans(box-shadow, .2s);
+        margin-bottom: $vSpace-medium;
+
+        &:hover {
+            box-shadow: 0 0 .8rem rgba(0,0,0, 0.45);
+        }
+    }
+
+    &__icon {
+        width: 5rem;
+        height: auto;
+        @include center-it-both;
+    }
+
+    &__h4 {
+        font-size: $smallest-head;
+        background: $selection-colour;
+        border-right: 1.25rem solid $value;
+        color: #fff;
+        padding: .85rem 1rem;
+
+        &--title {
+            font-weight: $bold;
+        }
+
+        &--revolution {
+            border-color: $revolution;
+        }
+
+        &--jubilee {
+            border-color: $jubilee;
+        }
+
+        &--supreme {
+            border-color: $supreme;
+        }
+
+        &--visitor {
+            border-color: $visitor;
+        }
+
+        &--j-bed {
+            border-color: $j-bed;
+        }
+
+        &--modern {
+            border-color: $modern;
+        }
+
+        &--classic {
+            border-color: $classic;
+        }
+
+        &--retro-chair {
+            border-color: $retro-chair;
+        }
+
+        &--retro-two-seater {
+            border-color: $retro-two-seater;
+        }
+
+        &--retro-three-seater {
+            border-color: $retro-three-seater;
+        }
+
+        &--footstool {
+            border-color: $footstool;
+        }
+
+        &--s1 {
+            border-color: var(--benchmark-s1);
+        }
+
+        &--s3 {
+            border-color: var(--benchmark-s3);
+        }
+
+        &--s5 {
+            border-color: var(--benchmark-s5);
+        }
+
+        &--s7 {
+            border-color: var(--benchmark-s7);
+        }
+    }
+
+    &__img {
+        display: block;
+    }
+}
+
+// Policy and work with us pages
+.generic {
+
+    &__article {
+
+        &--narrow {
+            max-width: 70rem;
+        }
+
+        &:not(:last-child) {
+            border-bottom: .2rem solid $borders;
+            padding-bottom: 4rem;
+        }
+    }
+
+    &__h2 {
+        font-size: $small-head;
+        color: $faded-text;
+        padding-bottom: $under-header;
+    }
+
+    &__h3 {
+        font-size: $sub-head;
+        padding-bottom: $under-header;
+
+        &--topPadd {
+            padding-top: 3rem;
+        }
+
+        &--botPadd {
+            padding-bottom: 3rem;
+        }
+    }
+
+    &__h4 {
+        font-size: $minor-head;
+        padding-bottom: $under-header;
+
+        &--topPadd {
+            padding-top: 3rem;
+        }
+    }
+
+    &__copy {
+        @extend %body-copy;
+        max-width: 90rem;
+
+        &--emphasise {
+            font-style: normal;
+            font-weight: $medium;
+        }
+
+        &--small-bottom-margin {
+            // Need important due to use of decendent selector, WordPress not having correct classes
+            padding-bottom: 1rem !important;
+        }
+
+        &--rwd-break {
+            display: inline-block;
+        }
+    }
+
+    &__button {
+        @include button-pill(1.3rem, $accent-teal, 1.2rem 2.8rem, $accent-teal, #fff, #fff, $accent-teal, $accent-teal);
+
+        &--margin-top {
+            margin-top: 3rem;
+        }
+
+        &--margin-right {
+            margin-right: 1rem;
+        }
+    }
+
+    &__list {
+        font-size: $main-copy;
+        line-height: 3rem;
+        max-width: 90rem;
+        list-style-type: disc;
+        padding: 0 0 $vSpace-large 1.5rem;
+
+        &--no-btm-padding {
+            padding-bottom: 0;
+        }
+
+        &--ordered {
+            list-style-type: decimal;
+        }
+    }
+}
+
+// Decendent selectors used when WordPress doesn't have the correct classes
+.generic__article p {
+    @extend %body-copy;
+    max-width: 90rem;
+}
+
+.generic__article ul {
+    font-size: $main-copy;
+    line-height: 3rem;
+    max-width: 90rem;
+    list-style-type: disc;
+    padding: 0 0 $vSpace-large 1.5rem;
+}
+
+.generic__article h4 {
+    font-size: $minor-head;
+    padding-bottom: $under-header;
+}
+
+// Client login
+.lower-banner {
+
+    &__btn-wrap {
+
+        &--client-login {
+            margin-right: 5rem;
+
+            @include breakpointAt(mobileNav) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__set {
+
+        &--client-login {
+
+            @include breakpointAt(smaller) {
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    &__h4 {
+        font-size: 1.8rem;
+        font-weight: $medium;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+    }
+
+    &__h3 {
+
+        &--no-bpad {
+            padding-bottom: 0;
+        }
+    }
+
+    &__link {
+
+        &--client-login {
+            text-align: center;
+            margin: 0 1rem 1rem 1rem;
+
+            &:link, &:visited {
+                display: block;
+            }
+        }
+    }
+}
+
+.results {
+
+    &__wrap {
+
+        &--download-all {
+            background: $selection-colour;
+            display: flex;
+        }
+    }
+
+    &__h4 {
+
+        &--client-login {
+            font-size: 2rem;
+            line-height: 2.4rem;
+            padding: 1.25rem;
+            border-right-width: 1.25rem;
+
+            &--code {
+                font-weight: $bold;
+
+                @include breakpointAt(forNegativeMargins) {
+                    display: block;
+                }
+
+                @include breakpointAt(medium) {
+                    display: inline;
+                }
+            }
+
+            &--size {
+                font-weight: $light;
+                font-size: 1.5rem;
+                display: block;
+            }
+        }
+
+        &--s1 {
+            border-color: var(--benchmark-s1, #97d700);
+        }
+
+        &--s3 {
+            border-color: var(--benchmark-s3, #0cc6de);
+        }
+
+        &--s5 {
+            border-color: var(--benchmark-s5, #fece00);
+        }
+
+        &--s7 {
+            border-color: var(--benchmark-s7, #c8c8c8);
+        }
+
+        &--kids-orange {
+            border-color: $foam-free;
+        }
+
+        &--kids-green {
+            border-color: $anti-allergy;
+        }
+
+        &--kids-blue {
+            border-color: $waterproof;
+        }
+
+        &--kids-yellow {
+            border-color: $pocket-sprung;
+        }
+    }
+
+    &__link {
+
+        &--client-login {
+            background: $accent-teal;
+            cursor: pointer;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &--download-all {
+            color: #fff;
+            font-size: 2.3rem;
+            font-weight: $medium;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__faux-link {
+
+        &--client-login {
+            right: auto;
+            left: 0;
+        }
+    }
+
+    @include breakpointAt(small) {
+
+        &__link {
+            
+            &--download-all {
+                padding: 17rem 0;
+            }
+        }
+
+    }
+}
+
+// Commercial Login
+.results {
+
+    &__comm-h2 {
+        font-size: $smallest-head;
+
+        @include breakpointAt(xlarge) {
+            font-size: 2.4rem;
+        }
+    }
+
+    &__comm-thumb {
+        margin: .5rem 0;
+    }
+
+    &__comm-link {
+        @include button-square(1.4rem, 1.2rem 3rem);
+
+        &:link,
+    	&:visited {
+            display: block;
+            text-align: center;
+
+            @include breakpointAt(medium) {
+                padding: 1.6rem 3rem;
+                font-size: $secondary-copy;
+            }
+        }
+    }
+}

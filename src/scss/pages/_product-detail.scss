@@ -1,0 +1,1514 @@
+// Gallery and product specifics section
+.viewer {
+
+    background-color: #fafafa;
+
+    &__row {
+        display: flex;
+        padding-bottom: 3rem;
+
+        @include breakpointAt(mobileNav) {
+            display: block;
+            padding: 0 0 $vSpace-small 0;
+        }
+    }
+
+    &__gallery {
+        flex: 0 0 60%;
+        position: relative;
+
+        // Preloader styles
+        .animated-loader {
+            width: 5rem;
+            height: 5rem;
+            @include center-it;
+            top: 34%;
+        }
+
+        .carousel {
+            visibility: hidden;
+        }
+
+        @include breakpointAt(mobileNav) {
+            margin-bottom: $vSpace-xlarge;
+        }
+
+        &__message {
+            font-size: 13px; line-height: 20px; margin-top: 30px;
+            @include breakpointAt(mobileNav) {
+                display: none;
+            }
+    	}
+    }
+
+    &__add-to-cart-btn {
+        margin-bottom: 1.5rem;
+    }
+
+    &__note {
+        position: absolute;
+        bottom: 2.2rem;
+        color: #fff;
+        font-size: 1.6rem;
+        background: $selection-colour;
+        padding: 1.2rem 1.8rem;
+
+        &--left-align {
+            left: 2.2rem;
+        }
+
+        &--right-align {
+            right: 2.2rem;
+        }
+
+        &--clear-box {
+            background: none;
+            color: $text;
+        }
+
+        &--single-note {
+            background: none;
+            color: $text;
+            bottom: .5rem;
+        }
+
+        &--strong {
+            font-weight: $medium;
+            display: block;
+        }
+
+        &--tab-style {
+            bottom: 0;
+            text-align: center;
+        }
+
+        &--new {
+            background: $accent-teal;
+        }
+    }
+
+    &__foot-note {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        margin-top: 2.5rem;
+        max-width: 48rem;
+
+        &--long {
+            max-width: 60rem;
+        }
+        
+        @include breakpointAt(mobileNav) {
+            padding-left: 2.5rem;
+        }
+    }
+
+    &__foot-note-link {
+        font-weight: $medium;
+        color: $accent-teal;
+    }
+
+    &__aside {
+        padding-left: 3rem;
+        flex: 0 1 51.7rem;
+
+        @include breakpointAt(large) {
+            padding-left: 1.5rem;
+        }
+
+        @include breakpointAt(mobileNav) {
+            padding-left: 0;
+            margin-left: $gutter-large;
+            margin-right: $gutter-large;
+        }
+    }
+
+    &__info-box {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: $vSpace-small;
+        letter-spacing: 0.1px;
+
+        @include breakpointAt(large) {
+            padding-bottom: $vSpace-small;
+        }
+
+        @include breakpointAt(mobileNav) {
+            padding-bottom: 1.5rem;
+        }
+
+        // Remove the blue arrows 
+        &--dimensions {
+
+            .viewer__list-item {
+
+                &::before {
+                    content: none;
+                }
+            }
+        }
+
+        &--sizes {
+            padding-bottom: 0;
+        }
+
+        &--v-space {
+            margin-top: 1.5rem;
+        }
+
+        &__promo {
+            color: $faded-text;
+            font-size: $main-copy;
+            margin-bottom: 1rem;
+
+            &--blue {
+                color: $electric-blue;
+            }
+
+            &--strong {
+                font-weight: $semi-bold;
+            }
+        }
+
+        &__discount-price {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: $medium;
+            padding-bottom: .25rem;
+            color: $faded-text;
+    
+            &--pence {
+                font-size: 70%;
+            }
+
+            &--strike-thru {
+                text-decoration: line-through;
+            }
+        }
+
+        &__shop__button {
+            flex: 1;
+            font-size: $main-copy;
+            cursor: pointer;
+        }
+
+        &__order-box {
+            display: flex;
+            flex-direction: row;
+            font-size: $main-copy;
+            color: $faded-text;
+
+            @include breakpointAt(mobileNav) {
+                flex-direction: column;
+            }
+
+            &--size {
+                flex: 3;
+
+                @include breakpointAt(mobileNav) {
+                    margin-top: 1.5rem;
+                }
+
+                &--label {
+                    margin-bottom:1.5rem;
+                    display: block;
+                    color: $text;
+                }
+
+                &--selector {
+                    background: url("/_/img/svg/icon-arrow-selector.svg") no-repeat;
+                    background-position: right 1.2rem top 50%;
+                    border-radius: .5rem;
+                    border: .1rem solid $grey-border;
+                    padding: 1.4rem 3.5rem 1rem 1rem;
+                    font-size: 1.4rem;
+                    position: relative;
+                    appearance: none;
+                    background-size: 2rem;
+                    width: 100%;
+                }
+            }
+
+            &__quanity {
+                flex: 1;
+
+                &--label {
+                    margin-bottom:1.5rem;
+                    display: block;
+                    color: $text;
+                }
+
+                &__quantity-box {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    &--item {
+                        flex: 1;
+                        text-align: center;
+                    }
+
+                    &--item:last-child {
+                        flex: 2;
+                        text-align: left;
+
+                        @include breakpointAt(mobileNav) {
+                            flex: 12;
+                        }
+                    }
+
+                    &--no-select {
+                        flex: 8!important;
+                        text-align: left;
+
+                        @include breakpointAt(mobileNav) {
+                            flex: 12;
+                        }
+                    }
+
+                    &--subtract {
+                        background: url("/_/img/svg/icon-minus.svg") no-repeat;
+                        background-position: right .7rem top 50% !important;
+                        background-size: 1.7rem !important;
+                        border: 1px solid $grey-border;
+                        border-radius: 2rem;
+                        padding: 1.6rem;
+                        cursor: pointer;
+                    }
+
+                    &--add {
+                        background: url("/_/img/svg/icon-plus.svg") no-repeat;
+                        background-position: right .7rem top 50% !important;
+                        background-size: 1.7rem !important;
+                        border: 1px solid $grey-border;
+                        border-radius: 2rem;
+                        padding: 1.6rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        &__price-box {
+            display: flex;
+            justify-content: flex-start;
+            font-size: $big-copy;
+            margin-bottom: 1rem;
+        }
+
+        &__price {
+                font-weight: $semi-bold;
+                margin-right: 3rem;
+
+            &--pence {
+                bottom: 0;
+                font-size: 60%;
+            }
+        }
+
+        &__delivery-wrap {
+            display: flex;
+            align-items: center;
+        }
+
+        &__free-delivery {
+            font-size: 1.4rem;
+            font-weight: $medium;
+            text-transform: uppercase;
+            color: $electric-blue;
+        }
+
+        &__circle-tick {
+            width: 1.8rem;
+            height: auto;
+            margin-right: .7rem;
+            fill: $electric-blue;
+        }
+
+        &__order-now {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 1.5rem 0 .5rem;
+        }
+
+        &__order-message {
+            font-size: 1.4rem;
+            font-weight: $medium;
+            color: $electric-blue;
+        }
+
+        &__delivery-icon {
+            width: 3rem;
+            height: auto;
+            fill: $electric-blue;
+            margin-right: 1rem;
+        }
+    }
+
+	&__message {
+		display: none;
+        font-size: 1.3rem;
+        line-height: 2rem;
+        margin: 2rem 0 1rem;
+
+		@include breakpointAt(mobileNav) {
+            display: block;
+		}
+	}
+
+    &__h1 {
+        font-size: 2.8rem;
+        line-height: 3.8rem;
+        position: relative;
+        font-weight: 500;
+
+        &__wishlist-link {
+    
+            position: absolute;
+            right: 1.3rem;
+            top: 0;
+
+            @include breakpointAt(mobileNav) {
+                top: 0;
+            }
+        }
+
+        &--caps {
+            text-transform: uppercase;
+        }
+
+        @include breakpointAt(large) {
+            font-size: 2.5rem;
+            line-height: 2.4rem;
+        }
+
+        @include breakpointAt(smallest) {
+            font-size: $main-head;
+            line-height: 3.2rem;
+        }
+
+        &--type {
+            font-size: $minor-head;
+
+            @include breakpointAt(large) {
+                font-size: $smallest-head;
+            }
+
+            @include breakpointAt(smallest) {
+                font-size: $minor-head;
+            }
+        }
+
+        &--rwd-break {
+
+            @include breakpointAt(mobileNavMin) {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__h2 {
+        padding-top: .35rem;
+    }
+
+    &__code {
+        font-size: 1.4rem;
+        font-weight: $medium;
+        color: $faded-text;
+        margin-bottom: 1rem;
+
+        @include breakpointAt(large) {
+            margin-bottom: .75rem;
+        }
+    }
+
+    &__h2, &__h3, &__h4 {
+        font-size: 1.8rem;
+        padding-bottom: $vSpace-smaller;
+
+        @include breakpointAt(large) {
+            padding-bottom: $under-header;
+        }
+    }
+
+    &__h4 {
+        font-size: 1.6rem;
+
+        @include breakpointAt(mobileNav) {
+            margin-bottom: .5rem;
+        }
+    }
+
+    &__list {
+        font-size: $minor-copy;
+        line-height: 2.6rem;
+
+        @include breakpointAt(mobileNav) {
+            font-size: $secondary-copy;
+        }
+    }
+
+    &__list-item {
+
+        &::before {
+            content: "";
+            width: 1.8rem;
+            height: 1.28rem;
+            display: inline-block;
+            background: url(/_/img/svg/bullet-tick.svg);
+            background-position: left bottom;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-right: .8rem;
+        }
+
+        &--code {
+            font-weight: $semi-bold;
+        }
+
+        &--with-icon {
+            padding-top: .5rem;
+            padding-left: 2.5rem;
+            position: relative;
+
+            &::before {
+                content: none;
+            }
+        }
+    }
+
+    &-item {
+        color: #7E7E7E;
+        margin-bottom: 5px;
+
+        &--rwd-break {
+            display: inline-block;
+        }
+
+        &--code {
+            font-weight: $medium;
+        }
+
+        &--with-icon {
+            padding-left: 2.5rem;
+            position: relative;
+        }
+
+        &--dims-note {
+            font-size: 1.5rem;
+            font-weight: $medium;
+        }
+    }
+
+    &__pdf-icon {
+        width: 2rem;
+        height: auto;
+        position: absolute;
+        left: 0;
+        top: .8rem;
+        fill: #e51a2d;
+    }
+
+    &__social {
+        cursor: pointer;
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: .75rem;
+        }
+    }
+
+    &__button {
+        @include button-pill($main-copy, var(--buy-button-green, #8cd539), 1.5rem 5rem 1.5rem 5rem, var(--buy-button-green, #8cd539), white, rgba(255, 255, 255, 0), var(--buy-button-green, #8cd539), var(--buy-button-green, #8cd539));
+        font-weight: $medium;
+        margin-right: 2.5rem;
+    }
+
+    &__social-icon {
+        width: 2.5rem;
+        height: auto;
+        fill: $twitter;
+        @include trans(all, .2s);
+
+        @include breakpointAt(mobileNav) {
+            width: 3rem;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+
+        &--facebook {
+            fill: $facebook;
+        }
+
+        &--pinterest {
+            fill: $pinterest;
+        }
+
+        &--email {
+            fill: $email;
+        }
+
+        &--more {
+            fill: $more;
+        }
+    }
+}
+
+
+// Flickity generic styles
+.carousel-cell {
+    width: 100%;
+    margin-right: 1rem;
+    counter-increment: carousel-cell;
+    position: relative;
+
+    .popup-youtube {
+        @include center-it-both;
+        width: 12rem;
+        height: 10rem;
+
+        @include breakpointAt(smallest) {
+            width: 10rem;
+            height: 8rem;
+        }
+    }
+
+    .carousel-cell-icon {
+        height: auto;
+        @include center-it-both;
+    }
+}
+
+// Main gallery styles
+.carousel-main {
+    margin-bottom: $vSpace-medium;
+
+    // Transparent border used so thumbnails line up with outside edge of gallery
+    border: .2rem solid rgba(255, 255, 255, 0);
+
+    @include breakpointAt(mobileNav) {
+        border: none;
+    }
+
+    @include breakpointAt(smallest) {
+        margin-bottom: 0;
+    }
+
+    .carousel-cell-icon {
+        width: 6.5rem;
+    }
+
+    img {
+        display: block;
+    }
+}
+
+.carousel-warning {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 9px 14px;
+    display: inline-block;
+}
+
+.viewer--simply-kids .carousel-main {
+    border: none;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.4);
+}
+
+// Main gallery navigation styles
+.carousel-main-nav {
+
+    .carousel-cell {
+        width: calc((100% - 1rem * 5) / 6);
+
+        img {
+            border: .25rem solid rgba(255, 255, 255, 0);
+            cursor: pointer;
+        }
+
+        &.is-nav-selected img {
+            border: .25rem solid $value;
+        }
+
+        .carousel-cell-icon {
+            width: 3.25rem;
+            pointer-events: none;
+        }
+    }
+
+    @include breakpointAt(smallest) {
+        display: none;
+    }
+}
+
+// Left align gallery thumbnails when less than a full set of images
+.carousel-not-full-images .flickity-slider {
+    transform: translateX(0) !important;
+}
+
+// Change border colour around thumbnails on main gallery
+.viewer {
+
+    &--revolution {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $revolution;
+        }
+    }
+
+    &--jubilee {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $jubilee;
+        }
+    }
+
+    &--supreme {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $supreme;
+        }
+    }
+
+    &--visitor {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $visitor;
+        }
+    }
+
+    &--j-bed {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $j-bed;
+        }
+    }
+
+    &--crown-premier {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $crown-premier;
+        }
+    }
+
+    &--crown-windermere {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $crown-windermere;
+        }
+    }
+
+    &--modern {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $modern;
+        }
+    }
+
+    &--classic {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $classic;
+        }
+    }
+
+    &--retro-chair {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $retro-chair;
+        }
+    }
+
+    &--retro-two-seater {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $retro-two-seater;
+        }
+    }
+
+    &--retro-three-seater {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $retro-three-seater;
+        }
+    }
+
+    &--footstool {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $footstool;
+        }
+    }
+
+    &--protector {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $protector;
+        }
+    }
+
+    &--cover {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $cover;
+        }
+    }
+
+    &--foam-free {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $foam-free;
+        }
+    }
+
+    &--anti-allergy {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $anti-allergy;
+        }
+    }
+
+    &--pocket-sprung {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $pocket-sprung;
+        }
+    }
+
+    &--waterproof {
+
+        .carousel-cell.is-nav-selected img {
+            border-color: $waterproof;
+        }
+    }
+}
+
+// So we don't effect links in the other carousels
+.carousel-main .carousel-cell a, .carousel-main-nav .carousel-cell a {
+    display: block;
+}
+
+// Focus state for previous / next buttons
+.flickity-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 .5rem $accent-teal;
+}
+
+// Set next and previous buttons to use rem
+.flickity-prev-next-button {
+    width: 4.4rem;
+    height: 4.4rem;
+}
+
+// Main copy section
+.story {
+    background: $selection-colour;
+    border-top: 1.5rem solid $value;
+    @extend %center-text;
+    color: #fff;
+
+    &--revolution {
+        border-color: $revolution;
+    }
+
+    &--jubilee {
+        border-color: $jubilee;
+    }
+
+    &--supreme {
+        border-color: $supreme;
+    }
+
+    &--j-bed {
+        border-color: $j-bed;
+    }
+
+    &--visitor {
+        border-color: $visitor;
+    }
+
+    &--crown-premier {
+        border-color: $crown-premier;
+    }
+
+    &--crown-windermere {
+        border-color: $crown-windermere;
+    }
+
+    &--modern {
+        border-color: $modern;
+    }
+
+    &--classic {
+        border-color: $classic;
+    }
+
+    &--retro-chair {
+        border-color: $retro-chair;
+    }
+
+    &--retro-two-seater {
+        border-color: $retro-two-seater;
+    }
+
+    &--retro-three-seater {
+        border-color: $retro-three-seater;
+    }
+
+    &--footstool {
+        border-color: $footstool;
+    }
+
+    &--foam-free {
+        border-color: $foam-free;
+    }
+
+    &--anti-allergy {
+        border-color: $anti-allergy;
+    }
+
+    &--pocket {
+        border-color: $pocket-sprung;
+    }
+
+    &--waterproof {
+        border-color: $waterproof;
+    }
+
+    &--protector {
+        border-color: $protector;
+    }
+
+    &--cover {
+        border-color: $cover;
+    }
+
+    &__h1 {
+        font-size: $main-head;
+        padding-bottom: $under-header;
+        line-height: 3.4rem;
+
+        &--rwd-break {
+    
+            @include breakpointAt(smaller) {
+                display: inline-block;
+            }
+        }
+
+        &--force-break {
+            display: block;
+
+            @include breakpointAt(tiny) {
+                display: inline;
+            }
+        }
+    }
+
+    &__copy {
+        @extend %centred-body-copy;
+
+        &--long {
+            @extend %centred-body-copy-long;
+        }
+
+        &--rwd-break {
+            display: inline-block;
+        }
+    }
+}
+
+// Cross section and general fabrics section
+.supplementary {
+    text-align: center;
+
+    &__h2 {
+        font-size: $main-head;
+        padding-bottom: $under-header;
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: 2.2rem;
+        max-width: 70rem;
+        margin: 0 auto;
+
+        &--long {
+            max-width: 75rem;
+        }
+
+        &--strong {
+            font-weight: $medium;
+            color: $accent-teal;
+        }
+    }
+
+    &__image {
+        max-width: 70rem;
+        height: auto;
+        display: block;
+        margin: $vSpace-medium auto 0 auto;
+
+        @include breakpointAt(mobileNav) {
+            max-width: 100%;
+        }
+
+        &--margin-btm {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__features {
+        max-width: 110rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        &--five-items {
+            max-width: 80rem;
+        }
+    }
+
+    &__h3 {
+        font-size: $minor-head;
+        margin-bottom: $under-header;
+    }
+
+    &__list {
+        font-size: $main-copy;
+        line-height: 2.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include breakpointAt(smallest) {
+            display: block;
+        }
+    }
+
+    &__list-item {
+        flex: 0 0 28%;
+        display: flex;
+        align-items: center;
+        margin-bottom: .75rem;
+        text-align: left;
+
+        @include breakpointAt(mobileNav) {
+            flex: 0 0 31.5%;
+            margin-bottom: 1.5rem;
+        }
+
+        @include breakpointAt(small) {
+            flex: 0 0 50%;
+        }
+
+        &--five-items {
+            flex: 0 0 48%;
+        }
+    }
+
+    &__list-item-number {
+        background: $value;
+        color: #fff;
+        flex: 0 0 2.8rem;
+        display: flex;
+        height: 2.8rem;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        margin-right: .75rem;
+
+        &--revolution {
+            background: $revolution;
+        }
+
+        &--jubilee {
+            background: $jubilee;
+        }
+
+        &--supreme {
+            background: $supreme;
+        }
+
+        &--visitor {
+            background: $visitor;
+        }
+
+        &--j-bed {
+            background: $j-bed;
+        }
+
+        &--crown-premier {
+            background: $crown-premier;
+        }
+
+        &--crown-windermere {
+            background: $crown-windermere;
+        }
+
+        &--foam-free {
+            background: $foam-free;
+        }
+
+        &--anti-allergy {
+            background: $anti-allergy;
+        }
+
+        &--pocket {
+            background: $pocket-sprung;
+        }
+
+        &--waterproof {
+            background: $waterproof;
+        }
+    }
+
+    &__carousel-wrap {
+        max-width: 67rem;
+        margin: 2.5rem auto 0 auto;
+    }
+
+    &__carousel-sofa-nav-wrap {
+        max-width: 43rem;
+        margin: 2.5rem auto;
+
+        @include breakpointAt(tiny) {
+            max-width: 33rem;
+        }
+    }
+
+    &__swatch {
+        border-radius: 50rem;
+        border: .2rem dashed $modern;
+        padding: .3rem;
+
+        // Adds dotted border around swatches fabric colour to match product that uses said fabric
+        &--sonata {
+            border-color: $retro-two-seater;
+        }
+
+        &--raven {
+            border-color: $retro-three-seater;
+        }
+
+        &--autumn {
+            border-color: $footstool;
+        }
+
+        &--mink {
+            border-color: $classic;
+        }
+    }
+
+    &__fabric {
+        font-size: 1.3rem;
+    }
+
+    &__link-wrap {
+        position: relative;
+    }
+
+    &__link {
+        @include button-pill($main-copy, $footer-dark, 1rem 3rem 1rem 5rem, $footer-dark, #fff, #fff, $footer-dark, $footer-dark);
+    }
+
+    &__icon {
+        width: 2.2rem;
+        height: auto;
+        fill: currentColor;
+        left: -3.7rem;
+        @include center-it-vertically;
+    }
+}
+
+.carousel-sofa {
+    margin-left: 6.5rem;
+    margin-right: 6.5rem;
+
+    @include breakpointAt(smallest) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .flickity-prev-next-button.previous {
+       left: -6.5rem;
+   }
+
+   .flickity-prev-next-button.next {
+       right: -6.5rem;
+   }
+
+   .flickity-button {
+        background: #fff;
+        box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.4);
+    }
+
+    .flickity-prev-next-button {
+
+        @include breakpointAt(smallest) {
+            display: none;
+        }
+    }
+}
+
+// Sofa fabric options viewer carousel
+.carousel-sofa-nav {
+    margin-left: 2.75rem;
+    margin-right: 2.75rem;
+
+    .carousel-cell {
+        width: 6.5rem;
+        margin-right: 2.5rem;
+        text-align: center;
+        position: relative;
+
+        &.is-nav-selected {
+
+            // Correct icon for selected thumbnail
+            &::before {
+                content: "";
+                display: block;
+                width: 2.2rem;
+                height: 2.2rem;
+                background: url(/_/img/svg/icon-correct.svg) center no-repeat;
+                background-size: cover;
+                @include center-it;
+                top: 2.2rem;
+            }
+        }
+
+        img {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .flickity-prev-next-button {
+        width: 3rem;
+        height: 3rem;
+        transform: translateY(-115%);
+    }
+
+    .flickity-prev-next-button.previous {
+       left: -2.75rem;
+   }
+
+   .flickity-prev-next-button.next {
+       right: -2.75rem;
+   }
+
+   .flickity-button {
+        background: #fff;
+        box-shadow: 0 0 .6rem rgba(0, 0, 0, 0.4);
+    }
+}
+
+// Also available Section
+.available {
+    text-align: center;
+
+    // Used for Sofa beds where we didn't have the coloured band from the accessories like we do on the folding beds
+    &--bg-colour {
+        background: darken($light-fill, 3);
+    }
+
+    &__h2 {
+        font-size: $sub-head;
+
+        &--rwd-break {
+
+            @include breakpointAt(tiny) {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__flex-container {
+        display: flex;
+        justify-content: center;
+        margin-top: $vSpace-large;
+
+        &--three-products {
+
+            @include breakpointAt(small) {
+                display: block;
+            }
+        }
+
+        @include breakpointAt(smallest) {
+            display: block;
+        }
+    }
+
+    &__wrap {
+        flex: 0 0 25%;
+
+        @include breakpointAt(mobileNav) {
+            flex: 0 0 40%;
+        }
+
+        &:first-child {
+            margin-right: 4rem;
+
+            @include breakpointAt(smallest) {
+                margin-right: 0;
+                margin-bottom: 3rem;
+            }
+        }
+
+        &:last-child {
+            margin-left: 4rem;
+
+            @include breakpointAt(smallest) {
+                margin-left: 0;
+            }
+        }
+
+        // Set to prevent the 40% flex basis from the media query
+        &--three-products {
+            flex: 0 0 25%;
+
+            &:first-child {
+
+                @include breakpointAt(small) {
+                    margin-right: 0;
+                    margin-bottom: 3rem;
+                }
+            }
+
+            &:last-child {
+
+                @include breakpointAt(small) {
+                    margin-top: 3rem;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    &__h4 {
+        font-size: $smallest-head;
+        margin: 2rem 0;
+
+        @include breakpointAt(smallest) {
+            font-size: $minor-head;
+        }
+
+        &--small-vMargin {
+            margin-top: 1.5rem;
+        }
+
+        &--rwd-break {
+
+            @include breakpointAt(medium) {
+                display: block;
+            }
+
+            @include breakpointAt(small) {
+                display: inline;
+            }
+        }
+    }
+
+    &__link {
+        @include button-pill($main-copy, $footer-dark, 1rem 3rem 1rem 3rem, $footer-dark, #fff, #fff, $footer-dark, $footer-dark);
+
+        // Buttons used on the sofa bed detail page
+        &--bg-colour {
+
+            &:hover {
+                background: darken($light-fill, 3);
+            }
+        }
+
+        &,
+        &:link,
+        &:visited {
+
+            @include breakpointAt(smallest) {
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+        }
+
+        // Increase button padding at an earlier breakpoint when we have three products
+        &--three-products {
+
+            &,
+        	&:link,
+        	&:visited {
+
+                @include breakpointAt(small) {
+                    padding-left: 6.5rem;
+                    padding-right: 6.5rem;
+                }
+            }
+        }
+    }
+
+}
+
+// Dimensions Section
+.dimensions {
+    background: $light-fill;
+
+    &__h2 {
+        font-size: $main-head;
+        padding-bottom: $vSpace-medium;
+        padding-left: 1.25rem;
+    }
+
+    &__flex-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__h3 {
+        font-size: $sub-head;
+        padding-bottom: $vSpace-small;
+    }
+
+    &__list {
+        font-size: $main-copy;
+        line-height: 3rem;
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+    }
+
+    &__list-item {
+
+        &--strong {
+            font-weight: $medium;
+        }
+
+        &--vpadd {
+            padding-top: 2.5rem;
+        }
+
+        &--note {
+            padding-top: $vSpace-medium;
+            font-size: $minor-copy;
+            line-height: $sec-copy-height;
+            max-width: 35rem;
+            font-style: italic;
+        }
+
+        &--coloured {
+            color: $accent-teal;
+            font-weight: $medium;
+        }
+    }
+
+    &__icon {
+        width: 2rem;
+        height: auto;
+        position: absolute;
+        left: 0;
+        top: .4rem;
+        fill: #e51a2d;
+
+        &--download {
+            fill: $accent-teal;
+            width: 1.8rem;
+        }
+
+        &--anti-allergy {
+            fill: $anti-allergy;
+        }
+    }
+}
+
+// Accessories Section
+.accessories-panel {
+    background-color: var(--light-accessories);
+    color: black;
+
+    // Don't need a separate flex container here as the h2 is part of the column unline dimensions section for example
+    &__row {
+        display: flex;
+        justify-content: space-between;
+
+        @include breakpointAt(medium) {
+            flex-wrap: wrap;
+        }
+
+        @include breakpointAt(smallest) {
+            display: block;
+        }
+    }
+
+    &__intro {
+        flex: 0 0 41%;
+
+        @include breakpointAt(medium) {
+            flex: 0 0 100%;
+            margin-bottom: 3.5rem;
+        }
+    }
+
+    &__product {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        @include breakpointAt(small) {
+            flex: 0 0 50%;
+
+            // Add bottom margin to the first accessory
+            &:nth-child(2) {
+                margin-bottom: 3.5rem;
+            }
+        }
+
+        // Add bottom margin to all but the last accessory
+        @include breakpointAt(smallest) {
+            display: block;
+            text-align: center;
+
+            &:not(:last-child) {
+                margin-bottom: 3.5rem;
+            }
+        }
+    }
+
+    &__h2 {
+        font-size: $main-head;
+        padding-bottom: $under-header;
+    }
+
+    &__h4 {
+        font-size: $minor-head;
+        margin-bottom: 1.5rem;
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: 2.2rem;
+
+        @include breakpointAt(medium) {
+            max-width: 80rem;
+        }
+    }
+
+    &__img {
+        max-width: 21rem;
+        height: auto;
+
+        @include breakpointAt(smallest) {
+            max-width: 100%;
+        }
+    }
+
+    &__link {
+        margin-top: 1rem;
+        @include button-pill($main-copy, black, 1rem 3rem 1rem 3rem, black, white, var(--light-accessories), black, black);
+    }
+}
+
+

@@ -1,0 +1,74 @@
+%clear-fix {
+
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+%std-copy-link {
+    font-weight: $semi-bold;
+    color: $accent-teal;
+}
+
+%margin-top-large {
+    margin-top: $vSpace-large;
+}
+
+%margin-top-xlarge {
+    margin-top: $vSpace-xlarge;
+}
+
+%margin-bottom-large {
+    margin-bottom: $vSpace-large;
+}
+
+%margin-bottom-xlarge {
+    margin-bottom: $vSpace-xlarge;
+}
+
+%center-text {
+    text-align: center;
+}
+
+%hide-me-at-medium {
+
+    @include breakpointAt(medium) {
+        display: none !important;
+    }
+}
+
+%body-copy {
+    font-size: $main-copy;
+    line-height: $main-copy-height;
+    padding-bottom: $vSpace-large;
+
+    &:last-of-type {
+        padding-bottom: 0;
+    }
+}
+
+%centred-body-copy {
+    font-size: $main-copy;
+    line-height: $main-copy-height;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding-bottom: $vSpace-large;
+
+    &:last-of-type {
+        padding-bottom: 0;
+    }
+}
+
+%centred-body-copy-long {
+    font-size: $main-copy;
+    line-height: $main-copy-height;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding-bottom: $vSpace-large;
+
+    &:last-of-type {
+        padding-bottom: 0;
+    }
+}

@@ -1,0 +1,591 @@
+// Changes to gallery section
+.viewer {
+
+	&--corekids {
+        background-image: none;
+        background-color: white;
+
+        .carousel-cell.is-nav-selected img {
+            border-color: var(--corekids-burnt, #f20d00);
+        }
+    }
+}
+
+.viewer--corekids .carousel-main {
+    border: none;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.4);
+}
+
+
+// Main hero section
+.ck-hero {
+	background: #f10000 url(/products/childrens-mattresses/corekids/corekids-e1/img/hero.jpg);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	background-size: cover;
+	color: white;
+
+	&--e2 {
+		background: #f10000 url(/products/childrens-mattresses/corekids/corekids-e2/img/hero.jpg);
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		background-size: cover;
+	}
+
+	&--e3 {
+		background: #f10000 url(/products/childrens-mattresses/corekids/corekids-e3/img/hero.jpg);
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		background-size: cover;
+	}
+
+	&__row {
+		padding-bottom: 8vw;
+		margin-bottom: 6rem;
+	}
+
+	&__logo {
+		fill: currentColor;
+		max-width: 35rem;
+		height: auto;
+		margin-bottom: 1.75rem;
+	}
+
+	&__h1 {
+		font-weight: $medium;
+		font-size: $huge-head;
+		padding-bottom: 1.5rem;
+	}
+
+	&__copy {
+		@extend %body-copy;
+		max-width: 60rem;
+
+		&--caps {
+			text-transform: uppercase;
+		}
+
+		&--foot-note {
+			font-size: 1.2rem;
+		}
+	}
+
+	@include breakpointAt(xlarge) {
+		background-position: 57% bottom;
+
+		&__row {
+			padding-top: 4rem;
+		}
+
+		&__h1 {
+			font-size: $main-head;
+			padding-bottom: 1rem;
+		}
+	}
+
+	@include breakpointAt(mobileNav) {
+		background: #f10000 url(/products/childrens-mattresses/corekids/corekids-e1/img/hero-mobile.jpg);
+		background-repeat: no-repeat;
+		background-position: center bottom;
+		background-size: cover;
+
+		&--e2 {
+			background: #f10000 url(/products/childrens-mattresses/corekids/corekids-e2/img/hero-mobile.jpg);
+			background-repeat: no-repeat;
+			background-position: center bottom;
+			background-size: cover;
+		}
+	
+		&--e3 {
+			background: #f10000 url(/products/childrens-mattresses/corekids/corekids-e3/img/hero-mobile.jpg);
+			background-repeat: no-repeat;
+			background-position: center bottom;
+			background-size: cover;
+		}
+
+		&__row {
+			padding-bottom: 67vw; 
+			margin-bottom: 4rem;
+		}
+
+		&__logo {
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+		}
+	}
+}
+
+
+// Chevron title
+.chevron-title {
+	background: url(/_/img/products/childrens-mattresses/corekids/arrow-full.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	padding: 3rem 0;
+
+	&__row {
+		display: grid;
+		grid-template-columns: repeat(2, .5fr) 1fr;
+		grid-template-areas: "header icon copy";
+		column-gap: 8rem;
+		align-items: center;
+	}
+
+	&__h2 {
+		grid-area: header;
+		font-weight: $medium;
+		font-size: $main-head;
+		color: var(--corekids-orange, #ed7403);
+	}
+
+	&__icon {
+		grid-area: icon;
+		max-width: 14rem;
+		height: auto;
+		fill: url(#ck-icon-gradient) #ed7403;
+		margin-left: 6rem;
+	}
+
+	&__copy {
+		grid-area: copy;
+		@extend %body-copy;
+		max-width: 40rem;
+	}
+
+	@include breakpointAt(xlarge) {
+
+		&__row {
+			column-gap: 5rem;
+		}
+
+		&__icon {
+			margin-left: 3rem;
+		}
+	}
+
+	@include breakpointAt(large) {
+
+		background-position: 48% center;
+
+		&__row {
+			grid-template-columns: .6fr .4fr .8fr;
+			column-gap: 3rem;
+		}
+		
+		&__icon {
+			margin-left: 0;
+			max-width: 13rem;
+		}
+	}
+
+	@include breakpointAt(mobileNav) {
+		
+		background: black;
+
+		&__row {
+			grid-template-columns: 1.4fr .6fr;
+			grid-template-rows: repeat(2, 1fr);
+			grid-template-areas: "header icon" "copy copy";
+			grid-column-gap: 0;
+			grid-row-gap: 2.5rem;
+		}
+
+		&__h2 {
+
+		}
+
+		&__copy {
+			color: white;
+			max-width: 90%;
+		}
+	}
+
+	@include breakpointAt(small) {
+		
+		&__icon {
+			margin-left: auto;
+		}
+
+		&__copy {
+			max-width: 100%;
+		}
+	}
+}
+
+
+// Cross Section (see benchmark product detail for main styles)
+.mattress-cross-section {
+
+	&--corekids {
+		background: linear-gradient(180deg, white 27.2%, rgba(0, 0, 0, 0) 0);
+		position: relative;
+		padding-bottom: 7rem;
+
+		&::after {
+			content: "";
+			height: 100%;
+			background: radial-gradient(ellipse at center,  #feb902 0%, #f10000 70%, #f10000 100%);
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: -5;
+		}
+	}
+
+	&--corekids-e2, &--corekids-e3 {
+		background: linear-gradient(180deg, white 25%, rgba(0, 0, 0, 0) 0);
+	}
+
+	&__list {
+
+		&--corekids {
+			margin-top: 3rem;
+		}
+	}
+
+	&__number {
+
+		// Provide old browsers with a red coloured font
+		&--corekids {
+			font-weight: $medium;
+			color: #f20d00;
+			
+			// New browsers, makes text looks like you can see through it
+			@supports (mix-blend-mode: screen) {
+				background-color: white;
+				color: black;
+				mix-blend-mode: screen;
+			}
+		}
+	}
+
+	@include breakpointAt(large) {
+
+		&--corekids {
+			background: linear-gradient(180deg, white 30%, rgba(0, 0, 0, 0) 0);
+		}
+
+		&--corekids-e2, &--corekids-e3 {
+			background: linear-gradient(180deg, white 28%, rgba(0, 0, 0, 0) 0);
+		}
+	}
+
+	// Prevent breaking into two columns from Benchmark
+	@include breakpointAt(smallMedium) {
+
+		&__list {
+			
+			&--corekids {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+	}
+
+	@include breakpointAt(belowMobileNav) {
+
+		&--corekids {
+			background: linear-gradient(180deg, white 16.75%, rgba(0, 0, 0, 0) 0);
+		}
+
+		&--corekids-e2, &--corekids-e3 {
+			background: linear-gradient(180deg, white 15.75%, rgba(0, 0, 0, 0) 0);
+		}
+
+		&__list {
+			
+			&--corekids {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+
+	@include breakpointAt(small) {
+		
+		&--corekids {
+			background: linear-gradient(180deg, white 13.25%, rgba(0, 0, 0, 0) 0);
+		}
+
+		&--corekids-e2, &--corekids-e3 {
+			background: linear-gradient(180deg, white 12.25%, rgba(0, 0, 0, 0) 0);
+		}
+	}
+}
+
+// Icons under cross section
+.icons-horiz-6-up {
+	display: flex;
+	justify-content: space-between;
+
+	&--corekids {
+		max-width: 85rem;
+		margin: 6rem auto 0;
+	}
+
+	&__list-item {
+		flex: 0 0 10%;
+	}
+
+	&__icon {
+		fill: #fff;
+		width: 100%;
+		height: auto;
+	}
+
+	@include breakpointAt(belowMobileNav) {
+		flex-wrap: wrap;
+		
+		&__list-item {
+			flex: 0 0 30%;
+
+			&:nth-child(-n+3) {
+				margin-bottom: 4rem;
+			}
+		}
+
+		&__icon {
+			width: 70%;
+		}
+	}
+}
+
+// Eco Award winning e-fibre, see Benchmark product detail for bulk styles
+.icons-horiz-3-up {
+
+	&__h3 {
+
+		&--corekids {
+			color: var(--corekids-orange, #ed7403);
+		}
+	}
+
+	&__copy {
+
+		&--corekids {
+			color: var(--corekids-orange, #ed7403);
+			text-transform: uppercase;
+		}
+	}
+
+	&__icon {
+		width: auto;
+		height: 16rem;
+		padding-bottom: 2rem;
+		fill: url(#ck-icon-gradient) #ed7403;
+	}
+}
+
+
+// Infrared section
+.infrared-energy {
+	background: #f20d00 url(/_/img/products/childrens-mattresses/corekids/ir-background.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	color: white;
+
+	&__text-wrap {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-bottom: 22vw;
+	}
+
+	&__icon {
+		fill: currentColor;
+		width: 20rem;
+		height: auto;
+		margin-right: 12rem;
+	}
+
+	&__copy {
+		max-width: 50rem;
+
+		&:last-child {
+			padding-top: 2rem;
+		}
+	}
+
+	@include breakpointAt(superWide) {
+
+		&__text-wrap {
+			padding-bottom: 18vw;
+		}
+	}
+
+	@include breakpointAt(xlarge) {
+
+		&__text-wrap {
+			padding-bottom: 25vw;
+		}
+	}
+
+	@include breakpointAt(mobileNav) {
+		background: #f20d00 url(/_/img/products/childrens-mattresses/corekids/ir-background-tablet.jpg);
+		background-position: center bottom;
+		background-size: cover;
+
+		&__icon {
+			max-width: 15rem;
+			margin-right: 4rem;
+		}
+
+		&__text-wrap {
+			padding-bottom: 30vw;
+		}
+	}
+
+	@include breakpointAt(special) {
+		background: #f20d00 url(/_/img/products/childrens-mattresses/corekids/ir-background-mobile.jpg);
+		background-position: center bottom;
+		background-size: cover;
+
+		&__text-wrap {
+			padding-bottom: 35vw;
+		}
+	}
+}
+
+// Icons 
+.icons-horiz-5-up {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	max-width: 90rem;
+	margin-left: auto;
+	margin-right: auto;
+
+
+	&__h3 {
+		flex: 0 0 100%;
+		font-size: 2.5rem;
+		font-weight: $medium;
+		margin-bottom: 4rem;
+		margin-left: -4rem;
+	}
+
+	&__figure {
+		text-align: center;
+		flex: 0 0 12%;
+	}
+
+	&__icon {
+		fill: currentColor;
+		width: 100%;
+		height: auto;
+		margin-bottom: 2rem;
+	}
+
+	&__caption {
+		font-size: 1.4rem;
+	}
+
+	&__footnote {
+		flex: 0 0 100%;
+		font-size: 1.2rem;
+		margin-top: 4rem;
+		margin-left: -4rem;
+	}
+
+	@include breakpointAt(medium) {
+
+		&__h3 {
+			margin-left: 0;
+			margin-bottom: 2rem;
+		}
+
+		&__footnote {
+			margin-left: 0;
+			margin-top: 2rem;
+		}
+	}
+
+	@include breakpointAt(mobileNav) {
+
+		flex-wrap: wrap;
+		justify-content: center;
+
+		&__figure {
+			flex: 0 0 30%;
+
+			&:nth-child(-n+3) {
+				margin-bottom: 4rem;
+			}
+		}
+
+		&__caption {
+			max-width: 15rem;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&__icon {
+			width: 50%;
+		}
+	}
+}
+
+.dimensions {
+
+	&__row {
+
+		&--corekids {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+// Sleep well section, see Benchmark product detail for bulk styles
+.icon-panel-4-up {
+
+	&--corekids {
+		background: black;
+		color: white;
+	}
+
+	&__h3 {
+
+		&--corekids {
+			color: var(--corekids-orange, #ed7403);
+		}
+	}
+
+	&__opening-copy {
+
+		&--longer {
+			padding-bottom: 6rem;
+		}
+
+		&--caps {
+			text-transform: uppercase;
+		}
+	}
+
+	&__copy {
+
+		&--caps {
+			text-transform: uppercase;
+		}
+
+		&--disclaimer {
+			
+			&--corekids {
+				color: var(--corekids-orange, #ed7403);
+			}
+		}
+
+		&--emphasise {
+
+			&--corekids {
+				color: var(--corekids-orange, #ed7403);
+			}
+		}
+	}
+
+	&__icon {
+		fill: url(#ck-icon-gradient) #ed7403;
+	}
+}

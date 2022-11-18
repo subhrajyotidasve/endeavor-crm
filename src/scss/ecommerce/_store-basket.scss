@@ -1,0 +1,336 @@
+.shopping-basket {
+    background-color: #F5F8FA;
+
+	&__header {
+		padding-bottom: .75rem;
+		margin-bottom: 1rem;
+		display: flow-root;
+
+		&__h1 {
+			font-size: 3rem;
+			font-weight: 300;
+			color: inherit;
+			margin: 0;
+			position: relative;
+			width: 50%;
+			float: left;
+
+			@include breakpointAt(small) {
+				width: 100%;
+	        }
+		}
+
+		&__image {
+			float: right;
+			width: 10rem;
+
+			@include breakpointAt(small) {
+				float: none;
+				display: initial;
+				margin-bottom: 2rem;
+	        }
+		}
+
+		@include breakpointAt(small) {
+			margin-bottom: 3rem;
+			text-align: center;
+        }
+	}
+
+	&__delivery-note-header {
+		font-size: 1.6rem;
+		font-weight: $medium;
+		padding-bottom: .35rem;
+	}
+
+	&__wrap {
+		display: grid;
+		grid-template-columns: 40% 20% 10% 30%;
+		font-size: 1.4rem;
+		border-bottom: .1rem solid #e1e1e1;
+
+		@include breakpointAt(small) {
+			grid-template-columns: 100%;
+        }
+
+		&--header{
+			padding-bottom: .5rem;
+		}
+
+		&--header-right {
+			text-align: right;
+
+			@include breakpointAt(small) {
+				display: none;
+	        }
+		}
+
+		&--header-center {
+			text-align: center;
+
+			@include breakpointAt(small) {
+				display: none;
+	        }
+		}
+
+		&__quantity-box {
+			border: .2rem solid #dcdede;
+			display: grid;
+			grid-template-columns: 33% 33% 33%;
+			padding: .5rem;
+			width: 8rem;
+			background-color: #fff;
+			margin: 0 auto;
+
+			&--icon {
+				width: 3rem;
+				height: 3rem;
+			}
+			
+			&--subtract, &--add {
+				border: none;
+				background: none;
+				cursor: pointer;
+			}
+
+			&--amount {
+			    font-size: 1.2rem;
+			    margin-top: .3rem;
+			}
+
+			@include breakpointAt(small) {
+				margin: 0;
+	        }
+		}
+
+		&--product {
+			padding: 2rem 0;
+
+			&--image {
+			    float: left;
+			    width: 9rem;
+			    margin-right: 2rem;
+			}
+
+			&--name {
+				font-weight: 500;
+				line-height: 1.5;
+			}
+
+			&--remove {
+				color: var(--electric-blue);
+				font-weight: $semi-bold;
+				text-decoration: underline;
+				margin-top: 1rem;
+				line-height: 2;
+				cursor: pointer;
+			}
+		}
+
+		&--price {
+			padding: 4rem 0 0 0;
+			text-align: center;
+
+			@include breakpointAt(small) {
+				display: none;
+	        }
+		}
+
+		&--quantity {
+			padding: 3.4rem 0 0 0;
+			text-align: center;
+
+			@include breakpointAt(small) {
+				padding: 0;
+	        }
+		}
+
+		&--total {
+			text-align: right;
+			padding: 4rem 0 0 0;
+
+			@include breakpointAt(small) {
+				text-align: left;
+				padding: 2rem 0;
+	        }
+		}
+	}
+
+	&__card {
+		width: 6rem;
+		background-color: rgba(0, 0, 0, .05);
+		padding: .6rem;
+		border-radius: .5rem;
+		border: 1px solid #ddddde;
+		transition: border .5s ease-in-out;
+
+		&:not(:last-child) {
+			margin-right: .75rem;
+		}
+
+		&:hover {
+			border: 1px solid #afafaf;
+			transition: border .2s ease-in-out;
+		}
+	}
+
+	&__footer-wrap {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+        font-size: $minor-copy;
+
+        &--delivery {
+        	order: 1;
+
+        	@include breakpointAt(small) {
+				order: 2;
+	        }
+        }
+
+        &--totals {
+        	order: 2;
+
+        	@include breakpointAt(small) {
+				order: 1;
+	        }
+        }
+
+        @include breakpointAt(small) {
+			grid-template-columns: 100%;
+        }
+
+        &__border {
+			border-right: 1px solid #e1e1e1;
+			margin-top: 3rem;
+
+			&__delivery {
+	            display: inline-block;
+	            margin: 0 3rem 4rem 0;
+
+	            &--text {
+	                vertical-align: middle;
+
+	                a {
+	                	font-weight: $semi-bold;
+	                	color: var(--electric-blue);
+	                }
+	            }
+
+	            &--icon {
+	                width: 4rem;
+					height: auto;
+					vertical-align: middle;
+					float: left;
+					margin-right: 2rem;
+	            }
+	        }
+
+	        @include breakpointAt(small) {
+        		border: none;
+	        }
+        }
+
+        &__total-wrap {
+        	display: flex;
+        	margin: 3rem 0 0 3rem;
+
+        	@include breakpointAt(small) {
+        		margin: 3rem 0 0 0;
+	        }
+
+        	&--title {
+        		flex: 1;
+        		font-weight: 500;
+        	}
+
+        	&--value {
+        		flex: 1;
+        		text-align: right;
+        		font-weight: 500;
+
+        		&--small {
+        			font-size: 1rem;
+        			font-weight: normal;
+        		}
+        	}
+
+        	&--delivery {
+        		flex: 1;
+        	}
+
+        	&--delivery-right {
+        		text-align: right;
+        	}
+        }
+
+        &__promo-wrap {
+        	display: flex;
+        	border-top: .1rem solid #e1e1e1;
+        	margin: 3rem 0 0 3rem;
+        	padding-top: 3rem;
+
+        	@include breakpointAt(small) {	
+        		flex-direction: column;
+        		margin: 3rem 0 0 0;
+	        }
+
+        	&--col {
+        		flex: 1;
+
+        		&--icon {
+				    width: 3rem;
+				    float: left;
+    				margin-right: 1rem;
+				}
+
+        		&--input {
+        			border: .1rem solid #e1e1e1;
+					border-radius: .35rem;
+					height: 3.5rem;
+
+					@include breakpointAt(small) {
+						height: 2.9rem;
+						width: 100%;
+						margin: 2rem 0;
+			        }
+        		}
+        	}
+
+        	&--button {
+        		background-color: #dcdede;
+        		color: #000000;
+				padding: 1rem 3rem;
+				border: none;
+				border-radius: .35rem;
+				display: inline-block;
+				font-size: $minor-copy;
+				width: 100%;
+        	}
+        }
+
+        &__checkout {
+        	margin-top: 3rem;
+        	float: right;
+        	text-align: right;
+
+        	&--button {
+        		background-color: #007BFC;
+        		color: #ffffff;
+				padding: 1rem 3rem;
+				border: none;
+				border-radius: .35rem;
+				display: inline-block;
+				font-size: $minor-copy;
+				text-align: center;
+
+				@include breakpointAt(small) {
+					display: block;
+				}
+        	}
+
+        	@include breakpointAt(small) {
+        		float: none;
+        	}
+        }
+	}
+}

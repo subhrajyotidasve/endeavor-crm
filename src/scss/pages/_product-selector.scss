@@ -1,0 +1,956 @@
+.hero-banner {
+    color: #fff;
+    background-color: var(--light-folding-beds);
+
+    &--sofa-beds {
+        background-color: var(--light-sofa-beds);
+    }
+
+    &--accessories {
+        background-color: var(--light-accessories);
+    }
+
+    &--contract {
+        background: #5a6f87 url(/_/img/products/contract/banner.jpg) center center no-repeat;
+        background-size: cover;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 52rem;
+
+        @include breakpointAt(medium) {
+            height: 40rem;
+        }
+
+        @include breakpointAt(mobileNav) {
+            height: 33rem;
+        }
+
+        @include breakpointAt(small) {
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__wrap {
+        flex: 0 0 40%;
+
+        @include breakpointAt(large) {
+            flex-basis: 45%;
+        }
+
+        @include breakpointAt(medium) {
+            flex-basis: 40%;
+        }
+
+        @include breakpointAt(mobileNav) {
+            flex-basis: 48%;
+        }
+
+        @include breakpointAt(small) {
+            margin-bottom: 2rem;
+            max-width: 40rem;
+        }
+    }
+
+    &__img-wrap {
+        flex: 0 0 47%;
+
+        @include breakpointAt(small) {
+            padding: 0 4rem 2rem 4rem;
+        }
+
+        @include breakpointAt(smallest) {
+            padding: 0 0 2rem 0;
+        }
+    }
+
+    &__h1 {
+        font-size: 2.4rem;
+        font-weight: $medium;
+        height: 4.5rem;
+        line-height: 4.5rem;
+        display: inline-block;
+        padding-right: 10%;
+        background: $selection-colour;
+        margin-bottom: 1.5rem;
+        position: relative;
+
+        // Used to get the section to the left of the header
+        &::before {
+            content: "";
+            height: 4.5rem;
+            width: 100rem;
+            background: $selection-colour;
+            position: absolute;
+            left: -100rem;
+            top: 0;
+        }
+
+        // Used to create the angled section
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -6.9rem;
+            border-style: solid;
+            border-width: 4.5rem 7rem 0 0;
+            border-color: $selection-colour transparent transparent;
+        }
+
+        &--new-caps-style {
+            background: none;
+            color: var(--dark-folding-beds);
+            font-size: 1.8rem;
+            height: auto;
+            text-transform: uppercase;
+            font-weight: $semi-bold;
+            margin-bottom: 1rem;
+
+            &::before, &::after {
+                content: none;
+            }
+        }
+
+        &--sofa-beds {
+            color: var(--dark-sofa-beds);
+        }
+
+        &--accessories {
+            color: var(--dark-accessories);
+        }
+
+        @include breakpointAt(medium) {
+            font-size: $minor-head;
+            height: 4rem;
+            line-height: 4rem;
+            margin-bottom: 1rem;
+
+            &::before {
+                height: 4rem;
+            }
+
+            &::after {
+                height: 4rem;
+                border-width: 4rem 7rem 0 0;
+            }
+        }
+
+        @include breakpointAt(small) {
+            font-size: 3rem;
+            background: none;
+            color: $text;
+            height: auto;
+            margin-bottom: 0;
+            margin-top: 2.5rem;
+            padding-right: 0;
+
+            &::before, &::after {
+                content: none;
+            }
+
+            // Colour will not be needed when we get rid of the shape
+            &--new-caps-style {
+                color: var(--dark-folding-beds);
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__copy {
+        font-size: 4rem;
+        line-height: 4.5rem;
+        position: relative;
+
+        &--for-light-bg {
+            color: $text;
+            font-size: 3.8rem;
+            line-height: 4.2rem;
+        }
+
+        &--emphasise {
+            color: $text;
+        }
+
+        @include breakpointAt(medium) {
+            font-size: 3.5rem;
+            line-height: 3.8rem;
+        }
+
+        @include breakpointAt(mobileNav) {
+            font-size: 3rem;
+            line-height: 3.5rem;
+            color: $text;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.banner {
+    color: #fff;
+    background: url(/_/img/products/childrens-mattresses/selector/banner.jpg) center center no-repeat;
+    background-size: cover;
+    height: 29.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @include breakpointAt(xlarge) {
+        height: 20rem;
+        background-position: 70% center;
+    }
+
+    @include breakpointAt(mobileNav) {
+        background-position: 80% center;
+        height: 15rem;
+    }
+
+    @include breakpointAt(small) {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    &--child-mattress {
+        height: 54rem;
+
+        @include breakpointAt(superWide) {
+            height: 75rem;
+        }
+
+        @include breakpointAt(xlarge) {
+            background-position: center;
+            height: 40rem;
+        }
+
+        @include breakpointAt(mobileNav) {
+            height: 25rem;
+        }
+
+        @include breakpointAt(small) {
+            height: 21rem;
+        }
+
+        @include breakpointAt(smallest) {
+            height: 15rem;
+        }
+    }
+
+    &__h1 {
+        font-size: $massive-head;
+        font-weight: $bold;
+        line-height: 6rem;
+        padding-left: $vSpace-medium;
+        padding-right: $vSpace-medium;
+
+        &--date {
+            display: block;
+            font-size: 2.2rem;
+            font-weight: $book;
+            line-height: 3.5rem;
+        }
+
+        &--child-mattress {
+            font-size: 6.5rem;
+            line-height: 5.5rem;
+            color: #f8f8f8;
+            margin-bottom: 17.5rem;
+
+            @include breakpointAt(xlarge) {
+                margin-bottom: 10rem;
+                line-height: 3.5rem;
+            }
+
+            @include breakpointAt(mobileNav) {
+                margin-bottom: 4rem;
+            }
+
+            @include breakpointAt(small) {
+                margin-bottom: 6.5rem;
+            }
+        }
+
+        @include breakpointAt(xlarge) {
+            font-size: $huge-head;
+        }
+
+        @include breakpointAt(mobileNav) {
+            font-size: $sub-head;
+            line-height: 2.5rem;
+        }
+    }
+}
+
+.banner-intro {
+    text-align: center;
+
+    &__h2 {
+        font-size: $main-head;
+        padding-bottom: 1rem;
+
+        &--text-under {
+            padding-top: 4rem;
+        }
+
+        &--stronger {
+            font-weight: $bold;
+        }
+
+        
+        @include breakpointAt(mobileNavMin) {
+            
+            &--rwd-break-max {
+                display: block;
+            }
+        }
+
+        @include breakpointAt(mobileNav) {
+            
+            &--text-under {
+                padding-top: 2rem;
+            }
+
+            &--rwd-break {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__copy {
+        @extend %centred-body-copy;
+
+        &--stronger {
+            font-weight: $book;
+        }
+
+        &--notice {
+            display: inline-block;
+            background: $alert;
+            color: black;
+            padding: 1rem 2rem !important;
+        }
+
+        &--rwd-break {
+
+            @include breakpointAt(tiny) {
+                display: inline-block;
+            }
+        }
+
+        &--rwd-break-all {
+            display: inline-block;
+        }
+    }
+
+    &__list {
+        margin-bottom: 3rem;
+        @extend %centred-body-copy;
+        font-weight: $book;
+    }
+}
+
+
+// See form partial for form related styles
+.lower-banner {
+    background: $selection-colour;
+    color: #fff;
+
+    &--childrens-mattresses {
+        background: var(--quest-q3);
+    }
+
+    &__filter {
+        display: none;
+
+        @include breakpointAt(smaller) {
+            display: block;
+        }
+    }
+
+    &__filter-link {
+        background: #fff;
+        display: inline-block;
+        padding: 1.1rem 3.25rem 1.1rem .3rem;
+        border-radius: .3rem;
+        position: absolute;
+        right: 2.5rem;
+        top: 3.5rem;
+
+        &::after {
+            content: "";
+            width: 2.6rem;
+            height: 1.6rem;
+            display: block;
+            background: url(/_/img/svg/icon-arrow-selector.svg) center center no-repeat;
+            background-size: contain;
+            position: absolute;
+            right: 1rem;
+            @include center-it-vertically;
+            transform-origin: 50% 25%;
+            @include trans(transform, .4s);
+        }
+
+        &--kids {
+            background: #fff;
+
+            &::after {
+                background: url(/_/img/svg/icon-arrow-selector-kids.svg) center center no-repeat;
+            }
+        }
+
+        &--is-open {
+
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__filter-icon {
+        fill: $selection-colour;
+        width: 5.5rem;
+        height: auto;
+
+        &--kids {
+            fill: var(--quest-q3);
+        }
+    }
+
+    &__row {
+        position: relative;
+    }
+
+    &__form {
+        display: flex;
+        justify-content: space-between;
+
+        &--single-options {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include breakpointAt(mobileNav) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__set-wrap {
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        @include trans(max-height, 400ms, cubic-bezier(0.675, 0.170, 0.245, 0.795));
+
+        @include breakpointAt(mobileNav) {
+            margin-top: 2.5rem;
+        }
+
+        @include breakpointAt(smaller) {
+            flex-wrap: wrap;
+            margin-top: 0;
+            max-height: 0;
+            overflow: hidden;
+
+            &--is-open {
+                max-height: 100vh;
+            }
+        }
+    }
+
+    &__btn-wrap {
+        flex: 0 0 25%;
+
+        @include breakpointAt(large) {
+            margin-right: 1rem;
+        }
+
+        @include breakpointAt(medium) {
+            flex: 0 0 30%;
+            margin-right: 0;
+        }
+
+        @include breakpointAt(mobileNav) {
+            flex: 0 0 100%;
+            text-align: center;
+        }
+
+        @include breakpointAt(smaller) {
+            text-align: left;
+        }
+    }
+
+    &__h3 {
+        font-size: $minor-head;
+        font-weight: $medium;
+        line-height: 2.8rem;
+        padding-bottom: 1rem;
+
+        &--center {
+            text-align: center;
+        }
+    }
+
+    &__button {
+        @include button-pill;
+        margin-top: .5rem;
+
+        &--childrens-mattresses {
+            @include button-pill($main-copy, #fff, 1.2rem 2.8rem 1.2rem 2.8rem, #fff, #576780, #576780, #fff, white);
+        }
+
+        &--mobile {
+            display: none;
+
+            @include breakpointAt(smaller) {
+                display: inline-block;
+                margin-top: 1rem;
+                margin-bottom: 2.5rem;
+            }
+        }
+
+        &--desktop {
+
+            @include breakpointAt(smaller) {
+                display: none;
+            }
+        }
+    }
+
+    &__set {
+
+        &--mattress {
+            flex: 0 0 45%;
+
+            @include breakpointAt(medium) {
+                display: inline-block;
+                flex-basis: auto;
+            }
+        }
+
+        &--single-options {
+            margin-top: .5rem;
+        }
+
+        @include breakpointAt(smaller) {
+            flex: 0 0 100%;
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    &__radio-group-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include breakpointAt(medium) {
+            display: inline-block;
+            flex-basis: auto;
+        }
+
+        &--single-options {
+
+            @include breakpointAt(medium) {
+                display: flex;
+            }
+
+            @include breakpointAt(small) {
+                display: block;
+            }
+        }
+    }
+
+    &__radio-group {
+
+        &--mattress {
+            flex: 0 0 47%;
+        }
+
+        &--memory {
+            order: 7;
+        }
+
+        &--sprung {
+            order: 10;
+        }
+
+        &--spring {
+            order: 5;
+        }
+
+        &--all {
+            order: 8;
+        }
+
+        // Used for selectors with only one row of options such as the sofa beds
+        &--single-options {
+            margin-left: 4rem;
+            margin-right: 4rem;
+
+            @include breakpointAt(small) {
+                margin: 1.5rem 0;
+            }
+        }
+    }
+}
+
+.results {
+
+    &__h3 {
+        font-size: $sub-head;
+        @extend %center-text;
+        margin-bottom: $vSpace-medium;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+
+        &--stronger {
+            font-weight: $bold;
+        }
+
+        &--rwd-break {
+
+            @include breakpointAt(smallest) {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.kids-eco {
+    background-color: #f84a03;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 6rem;
+        row-gap: 2rem;
+        grid-template-areas: "foam voc vac landfill" "rocket rocket rocket wildlife";
+        align-items: center;
+    }
+
+    &__svg {
+        max-width: 100%;
+
+        &--rocket {
+            grid-area: rocket;
+        }
+    }
+
+    @include breakpointAt(mobileNav) {
+
+        &__row {
+            column-gap: 3rem;
+        }
+    }
+
+    @include breakpointAt(small) {
+
+        &__row {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas: "foam voc" "vac landfill" "rocket rocket" "wildlife wildlife";
+        }
+    }
+}
+
+
+// New style selector for folding beds for commerce site
+.selection {
+
+    &__img-wrap {
+        position: relative;
+        text-align: center;
+    }
+
+    // Bottom border colour change for each range
+    &__img {
+        border-bottom: .5rem solid $value;
+        border-radius: .4rem;
+
+        // Folding beds
+        &--revolution {
+            border-color: $revolution;
+        }
+
+        &--jubilee {
+            border-color: $jubilee;
+        }
+
+        &--supreme {
+            border-color: $supreme;
+        }
+
+        &--j-bed {
+            border-color: $j-bed;
+        }
+
+        &--crown-premier {
+            border-color: $crown-premier;
+        }
+
+        &--crown-windermere {
+            border-color: $crown-windermere;
+        }
+
+        // Sofa beds
+        &--modern {
+            border-color: $modern;
+        }
+
+        &--classic {
+            border-color: $classic;
+        }
+
+        &--retro-chair {
+            border-color: $retro-chair;
+        }
+
+        &--retro-two-seater {
+            border-color: $retro-two-seater;
+        }
+
+        &--retro-three-seater {
+            border-color: $retro-three-seater;
+        }
+
+        &--footstool {
+            border-color: $footstool;
+        }
+
+        // Kids mattresses
+        &--foam-free {
+            border-color: $foam-free;
+        }
+
+        &--anti-allergy {
+            border-color: $anti-allergy;
+        }
+
+        &--pocket-sprung {
+            border-color: $pocket-sprung;
+        }
+
+        &--waterproof {
+            border-color: $waterproof;
+        }
+
+        &--corekids {
+            border-color: var(--corekids-burnt);
+        }
+
+        &--quest-q1 {
+            border-color: var(--quest-q1);
+        }
+
+        &--quest-q2 {
+            border-color: var(--quest-q2);
+        }
+
+        &--quest-q3 {
+            border-color: var(--quest-q3);
+        }
+
+        // Accesorries
+        &--protector {
+            border-color: $protector;
+        }
+
+        &--cover {
+            border-color: $cover;
+        }
+    }
+
+    &__sale {
+        background-color: var(--ecomm-heart);
+        color: white;
+        font-size: 1.8rem;
+        font-weight: $medium;
+        text-transform: uppercase;
+        display: inline-block;
+        border-radius: .4rem;
+        padding: .7rem 1.5rem;
+        position: absolute;
+        right: 1.75rem;
+        top: 1.75rem;
+        pointer-events: none;
+
+        &--border {
+            border: .2rem solid white;
+        }
+    }
+
+    &__promo {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        color: var(--ca-confirm);
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 95%;
+
+        &--bold {
+            font-weight: $bold;
+        }
+
+        &--rwd-break {
+            color: $text;
+
+            &::before {
+                content: " - ";
+            }
+        }
+    }
+
+    &__title-wrap {
+        margin-top: 1.1rem;
+        font-weight: $medium;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: .5rem;
+    }
+
+    &__title {
+        font-size: 2.2rem;
+        font-weight: inherit;
+    }
+
+    &__price-wrap {
+        font-size: 2rem;
+        font-weight: $bold;
+        position: relative;
+        text-align: right;
+    }
+
+    &__price {
+        padding-bottom: .1rem;
+
+        &--from {
+            font-weight: $medium;
+            font-size: 1.8rem;
+        }
+
+        &--pence {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__orig-price {
+        font-size: 1.6rem;
+        font-weight: $book;
+        color: #888;
+        position: absolute;
+        bottom: -1.6rem;
+        right: 0;
+        width: 12rem;
+
+        &--dual-line-title {
+            bottom: .8rem;
+        }
+
+        &--numeric {
+            text-decoration: line-through;
+        }
+
+        &--pence {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__features {
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+        font-weight: inherit;
+    }
+}
+
+// Reset position properties applied from the product detail page
+.selection .wishlist-link, .selection .wishlist-on {
+    left: 1.75rem;
+    top: 1.75rem;
+}
+
+// Increase size of certain elements now we have a single column and more horizontal space
+@include breakpointAt(breakEarlySingleCol) {
+
+    .selection {
+
+        &__sale {
+            font-size: 2rem;
+            padding: 1rem 2rem;
+            right: 2rem;
+            top: 2rem;
+        }
+
+        &__promo {
+            font-size: 2rem;
+            line-height: 2.4rem;
+            bottom: 3.5rem;
+        }
+    }
+
+    .selection .wishlist-link, .selection .wishlist-on {
+        left: 2rem;
+        top: 2rem;
+    }
+}
+
+@include breakpointAt(smallest) {
+
+    .selection {
+
+        &__sale {
+            padding: .8rem 1.8rem;
+            right: 1.5rem;
+            top: 1.5rem;
+        }
+
+        &__promo {
+            bottom: 3rem;
+
+            &--rwd-break {
+                display: inline-block;
+                width: 100%;
+
+                &::before {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    .selection .wishlist-link, .selection .wishlist-on {
+        left: 1.5rem;
+        top: 1.5rem;
+    }
+
+}
+
+
+
+
+
+
+

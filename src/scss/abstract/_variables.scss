@@ -1,0 +1,167 @@
+// Various colours 
+:root {
+	
+	--benchmark-s1: #97d700;
+	--benchmark-s3: #0cc6de;
+	--benchmark-s5: #fece00;
+	--benchmark-s7: #c8c8c8;
+
+	--corekids-burnt: #f20d00;
+	--corekids-orange: #ed7403;
+
+	--quest-q1: #03887d;
+	--quest-q2: #5d4495;
+	--quest-q3: #576780;
+
+	--buy-button-green: #8cd539;
+
+	// Customer Admin Colours
+	--ca-stroke: #d4d4d4;
+	--ca-confirm: #007bfc;
+	--ca-confirm-hover: #4e48ff;
+
+	// Order status
+	--ca-checkout: #7f8fa6;
+	--ca-refunded: #fbc531;
+	--ca-paid: #ff7a59;
+	--ca-dispatched: #00aa64;
+	--ca-cancelled: #e84118;
+
+	// Ecommerce Colours
+	--ecomm-cta: #2a83bd;
+	--ecomm-stars: #2b8c79;
+	--ecomm-heart: #f15856;
+	--ecomm-trustpilot: #2d8e79;
+
+	--logo-background: #100f0f;
+
+	//// New 2022 colours ////
+	--electric-blue: #047bfd;
+	--light-grey-back: #f4f4f7;
+
+	// Folding beds
+	--light-folding-beds: #f7f3f0;
+	--dark-folding-beds: #c08e50;
+
+	// Sofa beds
+	--light-sofa-beds: #eff1f5;
+	--dark-sofa-beds: #b6bcc9;
+
+	// Accessories
+	--light-accessories: #f2f8fd;
+	--dark-accessories: #90c4e0;
+
+	// Mattresses
+	--light-mattresses: #f8fcf7;
+	--dark-mattresses: #C9D9A5;
+}
+
+// Site wide
+$text: black;
+$faded-text: lighten($text, 40);
+$accent-teal: #047bfd;
+$footer-light: #1e2126;
+$cool-black: #252525;
+$footer-dark: #0c0c0c;
+$borders: #e4e4e4;
+$light-fill: #fafafa;
+$light-blue: #dee6e9;
+$sustainable: #2fa30f;
+$alert: #ffeb3c;
+$eco-green: #98c21d;
+
+// New colours
+$grey-border: #959595;
+$electric-blue: #047bfd;
+
+// Product Category Colours
+$folding-beds: #9f9fae;
+$sofas: #b1aa9a;
+$child-mattresses: #8ccdd9;
+$accessories: #acbdbd;
+$contract-gold: #d7cd88;
+$contract-blue: #01213f;
+$selection-colour: #151e27;
+
+// Folding Beds (added new 2020 colours)
+$value: #09afa7;
+$revolution: #85a1bc;
+$jubilee: #a283ae;
+$supreme: #e1ab16;
+$visitor: #f4982b;
+$j-bed: #a1c0b7;
+$crown-premier: #35738e;
+$crown-windermere: #9daaba;
+
+// Sofa Beds (added new 2021/22 fabrics)
+$modern: #c9cacc; //Dove fabric
+$classic: #d8c9b8; // Mink fabric
+$retro-chair: #b29c80; // Autumn fabric
+$retro-two-seater: #7dbac3; // Sonata fabric
+$retro-three-seater: #4e4e4f; // Raven fabric
+$footstool: #b29c80; // Autumn fabric
+
+// Simply Kids & Toddler Mattresses
+$foam-free: #ff670c;
+$anti-allergy: #89bc22;
+$pocket-sprung: #fbb815;
+$waterproof: #1590d2;
+
+//Accessories
+$protector: #69c8f1;
+$cover: #a5a5a5;
+
+// Social Colours
+$facebook: #3b5998;
+$twitter: #54abec;
+$pinterest: #ca2025;
+$instagram: #df446c;
+$youtube: #f70100;
+$email: #7d7d7d;
+$more: #94d03a;
+
+// Section Colours
+$where-to-buy: #a3abb6;
+
+// Font sizing, weights and line heights
+$minor-copy: 1.3rem;
+$secondary-copy: 1.6rem;
+$main-copy: 1.7rem;
+$big-copy: 3.7rem;
+
+$smallest-head: 1.8rem;
+$small-head: 2rem;
+$minor-head: 2.2rem;
+$sub-head: 2.6rem;
+$main-head: 3.2rem;
+$huge-head: 4rem;
+$massive-head: 6rem;
+$special-page-head: 9rem;
+
+// Line heights
+$sec-copy-height: 2rem;
+$main-copy-height: 2.6rem;
+$main-header-height: 3.2rem;
+
+// Weights
+$light: 200;
+$book: 300;
+$medium: 400;
+$semi-bold: 500;
+$bold: 600;
+$black: 900;
+
+// Spacing used in margins, padding and gutters
+$under-header: .5rem;
+$under-header-large: .75rem;
+$vSpace-smaller: 1rem;
+$vSpace-small: 1.25rem;
+$vSpace-medium: 2.5rem;
+$vSpace-large: 3rem;
+$vSpace-xlarge: 4rem;
+$vSpace-xxlarge: 6rem;
+
+$gutter-medium: 1.25rem;
+$gutter-large: 2.5rem;
+$gutter-xlarge: 4rem;
+$gutter-xxlarge: 6rem;

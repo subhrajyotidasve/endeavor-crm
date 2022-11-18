@@ -1,0 +1,841 @@
+.about-banner {
+    background: #c6c6c6;
+    background: linear-gradient(to bottom, rgba(198,198,198, 1) 0%, rgba(255,255,255, 1) 15rem);
+
+    &__row {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        background: url('/_/img/support/about/banner-hero.jpg') 100% 65% no-repeat;
+        background-size: 67%;
+
+        @include breakpointAt(large) {
+            background-position: 100% 60%;
+            background-size: 65%;
+        }
+
+        @include breakpointAt(medium) {
+            background-position: center 64%;
+            background-size: 70rem;
+        }
+
+        @include breakpointAt(mobileNav) {
+            padding-top: 4rem;
+            padding-bottom: 2.5rem;
+        }
+
+        @include breakpointAt(small) {
+            background-position: center 56%;
+            background-size: 52rem;
+        }
+
+        @include breakpointAt(smallest) {
+            background-position: center 53%;
+            background-size: 100%;
+        }
+
+        @include breakpointAt(tiny) {
+            background-position: center 50%;
+        }
+    }
+
+    &__h1 {
+        font-size: $special-page-head;
+        line-height: 8.5rem;
+        font-weight: $bold;
+        padding-bottom: 2.5rem;
+
+        &--rwd-break {
+            display: block;
+        }
+
+        @include breakpointAt(large) {
+            font-size: 8rem;
+            line-height: 7.5rem;
+        }
+
+        @include breakpointAt(medium) {
+            font-size: 6rem;
+            line-height: 5.5rem;
+        }
+
+        @include breakpointAt(small) {
+            font-size: 5rem;
+            line-height: 4.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        @include breakpointAt(smallest) {
+
+            &--rwd-break {
+                display: inline;
+            }
+        }
+    }
+
+    &__h2 {
+        font-size: 3rem;
+        line-height: 3.5rem;
+        font-weight: $bold;
+        padding-bottom: 20rem;
+
+        &--rwd-break {
+            display: block;
+        }
+
+        @include breakpointAt(medium) {
+            padding-bottom: 35rem;
+        }
+
+        @include breakpointAt(small) {
+            padding-bottom: 27rem;
+        }
+
+        @include breakpointAt(smallest) {
+
+            &--rwd-break {
+                display: inline;
+            }
+        }
+
+        @include breakpointAt(tiny) {
+            padding-bottom: 20rem;
+        }
+    }
+
+    &__h3 {
+        font-size: 3rem;
+        line-height: 3rem;
+        font-weight: $bold;
+        padding-bottom: $under-header-large;
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+        max-width: 65rem;
+    }
+}
+
+.generic-intro {
+    margin-bottom: 3.5rem; //2.5rem from col-1-of-2
+
+    &--sm-btm-margin {
+        margin-bottom: 1.5rem;
+    }
+
+    @include breakpointAt(mobileNav) {
+        margin-bottom: 1.5rem;
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__h3 {
+        font-size: 3rem;
+        line-height: 3rem;
+        font-weight: $bold;
+        padding-bottom: $under-header-large;
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+
+        &:not(:last-child) {
+            padding-bottom: 2.5rem;
+        }
+    }
+}
+
+.philosophy {
+    background: #091218 url('/_/img/support/about/philosophy-background-wide.jpg') right 30% no-repeat;
+    color: #fff;
+
+    @include breakpointAt(forNegativeMargins) {
+        background: #091218 url('/_/img/support/about/philosophy-background.jpg') right top no-repeat;
+    }
+
+    @include breakpointAt(mobileNav) {
+        background: #1d2731;
+    }
+
+    &__h3 {
+        font-size: $massive-head;
+        line-height: 4.5rem;
+        font-weight: $bold;
+        padding-bottom: $under-header-large;
+
+        @include breakpointAt(small) {
+            font-size: $huge-head;
+            line-height: 4rem;
+        }
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+        max-width: 70rem;
+        padding-bottom: 2.5rem;
+    }
+}
+
+.standards {
+    background: #f7f6f4 url('/_/img/support/about/standards-background-wide.jpg') right bottom no-repeat;
+
+    @include breakpointAt(forNegativeMargins) {
+        background: #f7f6f4 url('/_/img/support/about/standards-background.jpg') right bottom no-repeat;
+    }
+
+    @include breakpointAt(mobileNav) {
+        background: #f7f6f4;
+    }
+
+    &__icon {
+        width: 11rem;
+        height: auto;
+        fill: #c3b189;
+        margin-bottom: 1.5rem;
+    }
+
+    &__h3 {
+        font-size: $massive-head;
+        line-height: 4.5rem;
+        font-weight: $bold;
+        padding-bottom: $under-header-large;
+
+        @include breakpointAt(small) {
+            font-size: $huge-head;
+            line-height: 4rem;
+        }
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+        max-width: 70rem;
+        padding-bottom: 2.5rem;
+    }
+
+    &__logo-wrap {
+        max-width: 55rem;
+        margin-top: 1.5rem;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 2.5rem;
+        justify-items: center;
+
+        @include breakpointAt(small) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 2rem;
+        }
+    }
+
+    &__logo {
+        width: auto;
+        height: 6rem;
+
+        &--large  {
+            height: 7.75rem;
+        }
+    }
+}
+
+.about-locally {
+    background: #bd1b1f url('/_/img/support/about/british-flag-background.jpg') center no-repeat;
+    background-size: cover;
+    color: #fff;
+
+    &__row {
+        min-height: 60rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include breakpointAt(mobileNav) {
+            min-height: 50rem;
+        }
+    }
+
+    &__h3 {
+        font-size: $massive-head;
+        line-height: 4.5rem;
+        font-weight: $bold;
+        padding-bottom: $under-header-large;
+
+        @include breakpointAt(small) {
+            font-size: $huge-head;
+            line-height: 4rem;
+
+            &--rwd-break {
+                display: block;
+            }
+        }
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+        max-width: 70rem;
+    }
+}
+
+.awards {
+    background: #4a5b71 url('/_/img/support/about/awards-background.jpg') center no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+
+    &__h3 {
+        font-size: $massive-head;
+        font-weight: $bold;
+        padding-bottom: $under-header-large;
+
+        @include breakpointAt(small) {
+            font-size: $huge-head;
+            line-height: 4rem;
+        }
+    }
+
+    &__main-copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+        max-width: 90rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__list {
+        max-width: 90rem;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 4rem;
+        flex-wrap: wrap;
+    }
+
+    &__list-item {
+        flex: 0 0 28%;
+
+        &:first-child {
+            margin-bottom: 4rem;
+        }
+
+        @include breakpointAt(small) {
+            flex: 0 0 46%;
+            margin-bottom: 4rem;
+
+            &:last-child, &:nth-last-child(2) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__img-wrap {
+        display: flex;
+        align-items: center;
+        min-height: 16rem;
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+
+    &__copy {
+        font-size: $secondary-copy;
+        margin-top: .75rem;
+
+        @include breakpointAt(small) {
+            margin-top: .25rem;
+        }
+    }
+}
+
+.sleep-well {
+
+    &__img-wrap {
+        background: url(/_/img/support/about/sleep-well.jpg) center top no-repeat;
+        background-size: cover;
+        height: 62rem;
+
+        @include breakpointAt(wide) {
+            height: 70rem;
+        }
+
+        @include breakpointAt(xlarge) {
+            height: 50rem;
+        }
+
+        @include breakpointAt(small) {
+            height: 30rem;
+        }
+    }
+
+}
+
+.sleep-well-text {
+    background: #010106;
+    text-align: center;
+    color: #fff;
+
+    &__img {
+        width: 70rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__intro-copy {
+        font-size: 2.2rem;
+        max-width: 81rem;
+        margin: 0 auto 4rem auto;
+
+        @include breakpointAt(small) {
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__copy-wrap {
+        display: flex;
+        max-width: 90rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include breakpointAt(small) {
+            display: block;
+        }
+    }
+
+    &__copy {
+        font-size: $secondary-copy;
+        line-height: $sec-copy-height;
+        text-align: left;
+        flex: 0 0 50%;
+
+        &:first-of-type {
+            padding-right: 2.5rem;
+        }
+
+        &:last-of-type {
+            padding-left: 2.5rem;
+        }
+
+        @include breakpointAt(small) {
+
+            &:first-of-type {
+                padding-right: 0;
+                margin-bottom: 2.5rem;
+            }
+
+            &:last-of-type {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+
+.sustainability {
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+
+        @include breakpointAt(mobileNav) {
+            display: block;
+        }
+    }
+
+    &__logo-wrap {
+        flex: 0 0 35%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 2.5rem;
+        justify-items: center;
+        align-items: center;
+        margin-left: 2rem;
+
+        @include breakpointAt(mobileNav) {
+            margin-left: 0;
+            margin-top: 2rem;
+            grid-column-gap: 2.5rem;
+            grid-row-gap: 2.5rem;
+        }
+    }
+
+    &__logo {
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__h2 {
+        font-size: $special-page-head;
+        line-height: 8.5rem;
+        font-weight: $bold;
+        padding-bottom: 2.5rem;
+
+        &--emphasise {
+            display: block;
+            color: $sustainable;
+        }
+
+        &--rwd-break {
+            display: inline-block;
+        }
+
+        @include breakpointAt(large) {
+            font-size: 8rem;
+            line-height: 7.5rem;
+        }
+
+        @include breakpointAt(medium) {
+            font-size: 6rem;
+            line-height: 5.5rem;
+        }
+
+        @include breakpointAt(small) {
+            font-size: 5rem;
+            line-height: 4.5rem;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+        max-width: 70rem;
+    }
+}
+
+.research {
+    display: flex;
+
+    @include breakpointAt(mobileNav) {
+        display: block;
+    }
+
+    &__img {
+        flex: 0 0 50%;
+        background: url('/_/img/support/about/research.jpg') center no-repeat;
+        background-size: cover;
+        min-height: 48rem;
+
+        @include breakpointAt(mobileNav) {
+            min-height: 25rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__text {
+        padding: 0 2.5rem 0 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include breakpointAt(superWide) {
+            padding-left: 12rem;
+        }
+
+        @include breakpointAt(forNegativeMargins) {
+            padding-left: 2.5rem;
+        }
+    }
+
+    &__h3 {
+        font-size: $massive-head;
+        line-height: 6rem;
+        font-weight: $bold;
+        padding-bottom: $under-header-large;
+
+        &--emphasise {
+            color: $sustainable;
+
+            @include breakpointAt(xlargeMin) {
+                display: block;
+            }
+
+            @include breakpointAt(mobileNav) {
+                display: block;
+            }
+
+            @include breakpointAt(small) {
+                display: inline;
+            }
+        }
+
+        @include breakpointAt(small) {
+            font-size: $huge-head;
+            line-height: 4rem;
+        }
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+        max-width: 70rem;
+    }
+}
+
+.fsc {
+    display: flex;
+
+    @include breakpointAt(mobileNav) {
+        display: block;
+    }
+
+    &__img {
+        order: 2;
+        background: url('/_/img/support/about/fsc.jpg') center no-repeat;
+        background-size: cover;
+        flex: 0 0 50%;
+        min-height: 48rem;
+
+        @include breakpointAt(mobileNav) {
+            min-height: 25rem;
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__text {
+        order: 1;
+        flex: 0 0 50%;
+        padding: 0 2.5rem 0 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include breakpointAt(superWide) {
+            padding-left: 12rem;
+        }
+
+        @include breakpointAt(forNegativeMargins) {
+            padding-left: 2.5rem;
+        }
+
+        @include breakpointAt(mobileNav) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__h3 {
+        font-size: $massive-head;
+        line-height: 6rem;
+        font-weight: $bold;
+        padding-bottom: $under-header-large;
+
+        &--emphasise {
+            color: $sustainable;
+
+            @include breakpointAt(xlargeMin) {
+                display: block;
+            }
+
+            @include breakpointAt(forNegativeMargins) {
+                display: block;
+            }
+        }
+
+        @include breakpointAt(small) {
+            font-size: $huge-head;
+            line-height: 4rem;
+        }
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+        max-width: 70rem;
+    }
+
+}
+
+.global-scale {
+    background: #010106 url('/_/img/support/about/global.jpg') left center no-repeat;
+    color: #fff;
+    display: flex;
+
+    @include breakpointAt(mobileNav) {
+        display: block;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        background-position: -85rem center;
+    }
+
+    @include breakpointAt(smallest) {
+        background-position: -105rem center;
+    }
+
+    &__spacer {
+        flex: 0 0 50%;
+        min-height: 45rem;
+
+        @include breakpointAt(mobileNav) {
+            display: none;
+        }
+    }
+
+    &__text {
+        padding: 0 2.5rem 0 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include breakpointAt(mobileNav) {
+            padding-left: 2.5rem;
+        }
+    }
+
+    &__h3 {
+        font-size: $massive-head;
+        line-height: 4.5rem;
+        font-weight: $bold;
+        padding-bottom: $under-header-large;
+
+        @include breakpointAt(small) {
+            font-size: $huge-head;
+            line-height: 4rem;
+        }
+
+        &--rwd-break {
+            display: block;
+        }
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+        max-width: 60rem;
+    }
+}
+
+.contract {
+    background: #8e96a1 url('/_/img/support/about/contract-background.jpg') center no-repeat;
+    background-size: cover;
+    color: #fff;
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include breakpointAt(mobileNav) {
+            display: block;
+        }
+    }
+
+    &__img-wrap {
+        flex: 0 0 40%;
+        margin-left: 2rem;
+        margin-right: -2.5rem;
+
+        @include breakpointAt(mobileNav) {
+            margin: 3rem 0 0 0;
+            text-align: center;
+        }
+    }
+
+    &__img {
+
+        @include breakpointAt(mobileNav) {
+            max-width: 75%;
+        }
+
+        @include breakpointAt(smallest) {
+            max-width: 100%;
+        }
+    }
+
+    &__h3 {
+        font-size: $massive-head;
+        line-height: 4.5rem;
+        font-weight: $bold;
+        padding-bottom: $under-header-large;
+
+        @include breakpointAt(small) {
+            font-size: $huge-head;
+            line-height: 4rem;
+        }
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+        margin-bottom: 2rem;
+        max-width: 70rem;
+    }
+
+    &__link {
+        @include button-pill($main-copy, #fff, 1.35rem 4rem 1.35rem 4rem, rgba(255, 255, 255, .1), #fff, rgba(255, 255, 255, .65), darken(#bdc4ce, 15), #fff);
+    }
+}
+
+.charity {
+    background: #f2f2f2;
+    background: linear-gradient(to right, #dfdfdf 0%, #f5f5f5 50%, #dfdfdf 100%);
+
+    &__row {
+        display: flex;
+        align-items: center;
+
+        @include breakpointAt(mobileNav) {
+            display: block;
+        }
+    }
+
+    &__text {
+        flex: 0 0 50%;
+
+        &:last-child {
+            padding: 0 2.5rem 0 6rem;
+
+            @include breakpointAt(mobileNav) {
+                padding-left: 0;
+            }
+        }
+    }
+
+    &__h3 {
+        font-size: $massive-head;
+        line-height: 4.5rem;
+        font-weight: $bold;
+        padding-bottom: $under-header-large;
+        max-width: 60rem;
+
+        @include breakpointAt(small) {
+            font-size: $huge-head;
+            line-height: 4rem;
+        }
+
+        @include breakpointAt(mobileNav) {
+            padding-bottom: 2.5rem;
+        }
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+        max-width: 60rem;
+    }
+
+    &__logos {
+        margin-top: 2.5rem;
+        display: grid;
+        grid-template-columns: 4fr 3.5fr 2fr;
+        grid-template-rows: 10rem;
+        grid-gap: 1rem;
+    }
+
+    &__link {
+        height: 100%;
+        text-align: center;
+    }
+
+    &__img {
+        object-fit: contain;
+        height: 100%;
+    }
+}

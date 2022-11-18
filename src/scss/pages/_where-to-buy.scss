@@ -1,0 +1,177 @@
+.banner {
+    &--where-to-buy {
+        background: url('/_/img/support/where-to-buy/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+}
+
+.wtb {
+	padding-top: 150px; background: url('/_/img/support/where-to-buy/gmap/wtb-bg.png') top center no-repeat; background-size: cover; min-height: 550px; padding-left: 2.2%; padding-right: 2.2%;
+	&__h1 {
+		font-size: 52px; line-height: 62px; text-align: center; padding-bottom: 10px;
+		span {white-space: nowrap;}
+	}
+	&__p {
+		text-align: center; font-size: 17px; line-height: 26px; max-width: 1000px; margin: 0 auto;
+	}
+	&__ctas {
+		display: flex; flex-wrap: wrap; margin: 0 auto; padding: 60px 0; width: 100%; max-width: 855px; justify-content: space-between;
+		& > div {
+			border: solid 1px #ffffff; height: 218px; display: flex; align-items: center; justify-content: center; width: 49.5%; background: #e6eaec; flex-direction: column; cursor: pointer;
+			&.grey {opacity: 0.5;}
+			span {
+				display: block; min-width: 244px; border-radius: 25px; height: 50px; background: #202020; color: #ffffff; cursor: pointer; text-align: center; padding: 15px 20px; font-size: 17px; margin-top: 30px;
+			}
+		}
+	}
+}
+
+.high_street_wrapper {
+	height: 0; position: relative; overflow: hidden;
+	&.show {
+		height: auto; overflow: visible;
+	}
+}
+
+#app {
+	height: 0!important; overflow: hidden;
+	&.show {height: 700px!important;}
+	#triggerGmap {display: none;}
+}
+
+// Special case because items have margin bottom
+.row--where-to-buy {
+    padding-bottom: 1rem;
+
+    // Adding .25rem of margin to flag links so just to compensate for that
+    @include breakpointAt(large) {
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+    }
+}
+
+// For base styles refer to product selector page styles
+.lower-banner {
+
+    &--where-to-buy {
+        color: #fff;
+        background: $where-to-buy;
+        text-align: center;
+    }
+
+    &__h3 {
+
+        &--light-type {
+            font-weight: $book;
+        }
+
+        &--large-btm-padding {
+            padding-bottom: 2rem;
+        }
+    }
+
+    &__carousel {
+        max-width: 41rem;
+        margin: 0 auto .5rem auto;
+
+        @include breakpointAt(smallest) {
+            max-width: 28rem;
+        }
+    }
+
+    &__flag-link {
+        width: 6rem;
+        height: auto;
+
+        &:hover img {
+            border: .2rem solid #fff;
+        }
+    }
+
+    &__img {
+        display: block;
+        margin-right: .75rem;
+        border: .2rem solid $where-to-buy;
+        @include trans(border, .2s);
+        border-radius: .4rem;
+    }
+}
+
+.carousel-country {
+
+    .flickity-prev-next-button {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .flickity-prev-next-button.previous {
+       left: -5rem;
+   }
+
+   .flickity-prev-next-button.next {
+       right: -5rem;
+   }
+
+   @include breakpointAt(smallest) {
+
+       .flickity-prev-next-button.previous {
+            left: -3.75rem;
+      }
+
+      .flickity-prev-next-button.next {
+            right: -3.75rem;
+      }
+   }
+
+   .flickity-button {
+        background: #fff;
+        box-shadow: 0 0 .6rem rgba(0, 0, 0, 0.4);
+    }
+}
+
+// Add active state
+.lower-banner .mixitup-control-active img {
+    border: .2rem solid #fff;
+}
+
+.retailers {
+
+    &__flex-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__logos {
+        margin-bottom: 2.5rem;
+        box-shadow: 0 .2rem .6rem rgba(0,0,0, 0.1);
+        border: .15rem solid #e7e7e7;
+        @include trans(box-shadow, .2s);
+        border-radius: .45rem;
+        overflow: hidden;
+
+        &:hover {
+            box-shadow: 0 .2rem .8rem rgba(0,0,0, 0.4);
+        }
+    }
+
+    &__img {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+	.wtb__h1 {font-size: 40px; line-height: 50px;}
+	.wtb__p br {display: none;}
+}
+@media only screen and (max-width: 650px) {
+	.wtb__ctas > div {
+		width: 100%; height: auto; padding: 20px 0;
+		&:first-child {margin-bottom: 20px;}
+		span {margin-top: 20px;}
+	}
+}
+@media only screen and (max-width: 500px) {
+	.wtb {padding-top: 110px;}
+	.wtb__h1 {font-size: 34px; line-height: 44px;}
+	.wtb__ctas {padding: 40px 0;}
+}

@@ -1,0 +1,190 @@
+.banner {
+
+    &--faqs {
+        background: #27282a url('/_/img/support/faqs/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+
+}
+
+.questions {
+
+    &__flex-container {
+        display: flex;
+        justify-content: space-between;
+
+        @include breakpointAt(mobileNav) {
+            display: block;
+        }
+    }
+
+    &__h2 {
+        font-size: $main-head;
+        padding-bottom: $under-header;
+    }
+
+    &__h3 {
+        font-size: $smallest-head;
+        text-align: right;
+        padding-bottom: 1rem;
+
+        @include breakpointAt(mobileNav) {
+            text-align: left;
+        }
+    }
+
+    &__copy {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+        max-width: 68rem;
+        margin-bottom: $vSpace-xlarge;
+
+        &--strong {
+            font-weight: $medium;
+        }
+
+        @include breakpointAt(mobileNav) {
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__search__wrap {
+        position: relative;
+
+        // Give search icon hover state
+        &:hover .questions__search-icon {
+            fill: $accent-teal;
+        }
+
+        &:hover .questions__search, &:focus .questions__search {
+            box-shadow: 0 .1rem .5rem 0 rgba(0, 0, 0, .35);
+            border: .25rem solid $accent-teal;
+        }
+    }
+
+    &__search {
+        width: 100%;
+        line-height: 6.5rem;
+        display: block;
+        border: .25rem solid #e7e7e7;
+        border-radius: 10rem;
+        box-shadow: 0 .1rem .5rem 0 rgba(0, 0, 0, .1);
+        padding-left: 3rem;
+        padding-right: 1.5rem;
+        @include trans(all, 0.25s);
+        font-family: inherit;
+        font-size: 2rem;
+        appearance: none;
+        margin-bottom: 4.5rem;
+        outline: none;
+    }
+
+    &__search-icon {
+        fill: $text;
+        width: 4rem;
+        height: auto;
+        right: 3rem;
+        @include trans(all, 0.25s);
+        @include center-it-vertically;
+    }
+
+    &__the-list {
+        border-top: .1rem solid $borders;
+    }
+
+    &__accord-wrap {
+        @include trans(background, 0.25s);
+
+        &:hover {
+            background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 5%, rgba(250,250,250,1) 95%, rgba(255,255,255,1) 100%);
+        }
+    }
+
+    // Reset button styles
+    &__accord-question {
+        background: none;
+        border: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: $vSpace-large 4rem $vSpace-large 0;
+        font-weight: $light;
+        font-size: 1.8rem;
+        cursor: pointer;
+        position: relative;
+        outline: none;
+
+        &::after {
+            content: "";
+            width: 2.5rem;
+            height: 1.5rem;
+            display: block;
+            background: url(/_/img/svg/icon-arrow.svg) center center no-repeat;
+            background-size: contain;
+            right: 0;
+            @include center-it-vertically;
+            @include trans(transform, .4s);
+        }
+
+        &--is-open {
+
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__accord-content {
+        max-height: 0;
+        overflow: hidden;
+        @include trans(max-height, .35s);
+        border-bottom: .1rem solid $borders;
+    }
+
+    // Needed to add tag selector due to WordPress automatically adding p tags
+    &__accord-content p {
+        max-width: 70rem;
+        font-size: $secondary-copy;
+        line-height: $sec-copy-height;
+        margin-bottom: $vSpace-large;
+    }
+
+    &__accord-answer {
+        max-width: 70rem;
+        font-size: $secondary-copy;
+        line-height: $sec-copy-height;
+        margin-bottom: $vSpace-large;
+
+        &--tip {
+            margin-bottom: 0;
+
+            &--strong {
+                font-weight: $bold;
+            }
+        }
+    }
+
+    &__accord-tip {
+        display: flex;
+        align-items: center;
+        padding-top: 1rem;
+        margin-bottom: $vSpace-large;
+        color: $accent-teal;
+
+        // Added due to WordPress adding unncessary p tags
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    &__accord-icon {
+        width: 4rem;
+        height: auto;
+        fill: $accent-teal;
+        margin-right: 1rem;
+
+        @include breakpointAt(small) {
+            width: 8rem;
+        }
+    }
+}

@@ -1,0 +1,169 @@
+.my-account-login-container {
+    text-align: center;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.my-account-login {
+    background-color: white;
+    padding: 4rem 2.5rem;
+    margin-bottom: 1rem; 
+    box-shadow: 0 3px 8px rgba(0, 0, 50, .2);
+    border-radius: .4rem;
+
+    &__logo {
+        width: 20rem;
+        fill: $text;
+        margin-bottom: 2rem;
+    }
+
+    &__h1 {
+        font-size: 2.4rem;
+        font-weight: 400;
+        line-height: 2.4rem;
+        color: #2b2b2b;
+        margin-bottom: 1rem;
+
+        &--rwd-break {
+            display: inline-block;
+        }
+    }
+
+    &__input-wrap {
+        margin-bottom: 2rem;
+
+        &--left {
+            text-align: left;
+        }
+
+        &--checkbox {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__label {
+        font-size: 1.6rem;
+        display: block;
+        position: relative;
+        padding-left: 3rem;
+        cursor: pointer;
+        user-select: none;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+
+            &:checked ~ .my-account-login__faux-checkbox::after {
+                display: block;
+            }
+        }
+
+        &:hover input ~ .my-account-login__faux-checkbox{
+            border-color: var(--ca-confirm);
+        }
+
+        // Create faux checkbox tick
+        .my-account-login__faux-checkbox {
+
+            &::after {
+                left: .6rem;
+                top: .15rem;
+                width: .6rem;
+                height: 1rem;
+                border: solid var(--ca-confirm);
+                border-width: 0 .3rem .3rem 0;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &__faux-checkbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 2.2rem;
+        width: 2.2rem;
+        border: .25rem solid var(--ca-confirm);
+        border-radius: .4rem;
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    }
+
+    &__link {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: var(--ca-confirm);
+        text-decoration: none;
+        transition: color .5s ease-in-out;
+
+        &:hover {
+            color: var(--ca-confirm-hover);
+            transition: color .2s ease-in-out;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        line-height: 5rem;
+        border-radius: .4rem;
+        display: block;
+        border: .25rem solid #eaeaea;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        font-family: inherit;
+        font-weight: inherit;
+        font-size: 1.8rem;
+        appearance: none;
+        transition: border-color .5s ease-in-out;
+
+        &:hover, &:focus {
+            border-color: var(--ca-confirm);
+            transition: border-color .2s ease-in-out;
+        }
+    }
+
+    &__button {
+        background-color: var(--ca-confirm);
+        color: #fff;
+        padding: 1.75rem;
+        border-radius: .4rem;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        border: none;
+        font-size: 1.6rem;
+        font-weight: 500;
+        transition: background-color .5s ease-in-out;
+
+        &:hover, &:focus {
+            background-color: var(--ca-confirm-hover);
+            transition: background-color .2s ease-in-out;
+        }
+    }
+
+    &__register {
+        font-size: 1.6rem;
+        font-weight: $book;
+        padding: 1rem 0 .5rem;
+        display: inline-block;
+
+        &--link {
+            color: var(--ca-confirm);
+            font-weight: $medium;
+        }
+    }
+
+    &__copyright {
+        font-size: 1.4rem;
+        font-weight: $book;
+        color: #767676;
+    }
+}
+
+

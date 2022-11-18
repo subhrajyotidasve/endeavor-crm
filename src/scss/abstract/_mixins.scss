@@ -1,0 +1,190 @@
+@mixin trans ($element: all, $over: 1s, $ease:ease-in-out) {
+	transition: $element $over $ease;
+}
+
+// Needed to use mixin as extend didn't work inside a media query
+@mixin center-it {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+@mixin center-it-vertically {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin center-it-both {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+// Buttons and UI elememts
+@mixin button-square ($font-size: $main-copy, $padding: 1.5rem 6rem) {
+
+	&,
+	&:link,
+	&:visited {
+		background: lighten($footer-light, 2.5);
+	    color: #fff;
+	    font-size: $font-size;
+	    padding: $padding;
+	    display: inline-block;
+		overflow: hidden;
+		position: relative;
+		z-index: 5;
+	}
+
+	&:focus {
+		background: black;
+	}
+
+	&::before, &::after {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+    &:hover::before {
+        animation: button-hover 1.5s ease-out;
+    }
+}
+
+
+@keyframes button-hover {
+
+	0% {
+		border-radius: 50%;
+  		background: black;
+  		transform:scaleX(.1) scaleY(.4)
+ 	}
+
+ 	to {
+  		border-radius: 100%;
+  		background: black;
+		transform:scaleX(4) scaleY(9);
+ 	}
+}
+
+// Pill button mixin with full variable control
+@mixin button-pill (
+
+	$font-size: $main-copy,
+	$border-color: #fff,
+	$padding: 1.2rem 2.8rem 1.2rem 2.8rem,
+	$background: #fff,
+	$text-color: $selection-colour,
+	$hover-background-color: $selection-colour,
+	$hover-text-color: #fff,
+	$hover-border-color: #fff) {
+
+	&,
+	&:link,
+	&:visited {
+		font-size: $main-copy;
+		padding: $padding;
+		background: $background;
+		color: $text-color;
+		cursor: pointer;
+		border: .2rem solid $border-color;
+		border-radius: 20rem;
+		display: inline-block;
+		@include trans(all, .3s);
+
+		@include breakpointAt(smallest) {
+			display: block;
+			text-align: center;
+		}
+	}
+
+	&:hover {
+		background: $hover-background-color;
+		color: $hover-text-color;
+		border: .2rem solid $hover-border-color;
+	}
+}
+
+//Smallest, small, medium, large, extra large and huge
+@mixin breakpointAt($breakpoint) {
+
+    // pixel equivlients depends on root font size at this breakpoint if 50% then this would equate to 300px 8px x 37.5em
+	@if $breakpoint == tiny {
+		@media only screen and (max-width: 22em) { @content };
+	}
+
+	@if $breakpoint == smallest {
+        @media only screen and (max-width: 28em) { @content };
+    }
+
+    @if $breakpoint == special {
+        @media only screen and (max-width: 30em) { @content };
+    }
+
+	@if $breakpoint == smaller {
+        @media only screen and (max-width: 34em) { @content };
+    }
+
+    @if $breakpoint == small {
+        @media only screen and (max-width: 40em) { @content };
+    }
+
+    @if $breakpoint == belowMobileNav {
+        @media only screen and (max-width: 45em) { @content };
+    }
+
+    @if $breakpoint == breakEarlySingleCol {
+        @media only screen and (max-width: 49em) { @content };
+    }
+
+	@if $breakpoint == mobileNav {
+        @media only screen and (max-width: 53em) { @content };
+    }
+
+	@if $breakpoint == mobileNavMin {
+        @media only screen and (min-width: 53em) { @content };
+    }
+
+    @if $breakpoint == smallMedium {
+        @media only screen and (max-width: 57em) { @content };
+    }
+
+    @if $breakpoint == medium {
+        @media only screen and (max-width: 62em) { @content };
+    }
+
+	@if $breakpoint == large {
+		@media only screen and (max-width: 72em) { @content };
+	}
+
+	@if $breakpoint == xlarge {
+		@media only screen and (max-width: 82em) { @content };
+	}
+
+	@if $breakpoint == forNegativeMargins {
+		@media only screen and (max-width: 88.5em) { @content };
+	}
+
+	@if $breakpoint == xlargeMin {
+		@media only screen and (min-width: 88.5em) { @content };
+	}
+
+	@if $breakpoint == wide {
+		@media only screen and (min-width: 95em) { @content };
+	}
+
+	@if $breakpoint == firstShrink {
+		@media only screen and (max-width: 101em) { @content };
+	}
+
+	// Breakpoint for really wide monitors - use cautiously only needed when row hasn't been used!
+	@if $breakpoint == superWide {
+		@media only screen and (min-width: 145em) { @content };
+	}
+}

@@ -1,0 +1,344 @@
+.shop-btn-bg {
+    font-size: 1.6em;
+    font-weight: $medium;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .9em 1.75em;
+    border-radius: 10rem;
+    border: none;  
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &:hover::before {
+        animation: shop-btn-hover 1.2s ease-out;
+    }
+
+    &:focus {
+        background-color: var(--electric-blue);
+    }
+
+    // Disable button when a product is out of stock
+    &--disabled {
+        cursor: auto;
+        background-color: #eee;
+        color: #ababab;
+
+        &::before, &::after {
+            content: none;
+        }
+    }
+
+    &--small {
+        font-size: 1.5em;
+        padding: .7em 1.2em;
+        color: black;
+    }
+
+    // For use on dark backgrounds
+    &--dark-bg {
+        background-color: white;
+    }
+
+    &__icon {
+        width: 1.3em;
+        margin-left: .8em;
+        fill: currentcolor;
+    }
+}
+
+// Animation for shop-btn-bg
+@keyframes shop-btn-hover {
+
+    0% {
+        border-radius: 50%;
+        background-color: var(--electric-blue);
+        transform:scaleX(.1) scaleY(.4)
+    }
+
+    to {
+        border-radius: 100%;
+        background-color: var(--electric-blue);
+        transform:scaleX(4) scaleY(9);
+    }
+}
+
+// Basic shop button with no background
+.shop-btn {
+
+    &:link, &:visited {
+        font-size: 1.6em;
+        font-weight: $medium;
+        display: inline-flex;
+        align-items: center;
+        padding: .9em 1.5em;
+        border-radius: 10rem;
+        transition: all .5s ease-in-out;
+        margin-left: -1.5em;
+        color: currentcolor;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, .05);
+            transition: all .2s ease-in-out;
+            margin-left: 0;
+        }
+    }
+
+    &--small {
+
+        &:link, &:visited {
+            font-size: 1.4em;
+        }
+
+        & .shop-btn__icon {
+            width: 1.15em;
+            margin-left: .6em;
+            fill: currentcolor;
+        }
+    }
+
+    &--no-bg {
+
+        &:link, &:visited {
+            margin-left: 0;
+            padding: 1rem 0 0 0;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &--dark-bg {
+
+        &:link, &:visited {
+
+            &:hover {
+                background-color: rgba(255, 255, 255, .15);
+            }
+        }
+    }
+
+    &__icon {
+        width: 1.3em;
+        margin-left: .8em;
+        fill: currentcolor;
+    }
+}
+
+
+// Add spinner to pay button
+.pay-button .my-account__button {
+    
+    &--processing {
+        background-image: url(/_/img/svg/loading-spinner.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 22%;
+        color: transparent;
+    }
+}
+
+
+.wishlist-link {
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: white;
+    border-radius: 10rem;
+    box-shadow: 0 0 .6rem rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .35s ease-in-out;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+
+    // See utility.scss for animation styles
+    &:hover {
+        background-color: var(--ecomm-heart);
+        transition: all .2s ease-in-out;
+        animation-name: hvr-icon-up;
+        animation-timing-function: ease-out;
+        animation-duration: 0.65s;
+            
+
+        svg {
+            transition: all .2s ease-in-out;
+            fill: white!important;
+        }
+    }
+
+    &__wishlist-icon {
+        fill: var(--ecomm-heart);
+        width: 2.6rem;
+        padding-top: .3rem;
+        transition: all .35s ease-in-out;
+    }
+
+    @include breakpointAt(mobileNav) {
+        top: 0;
+    }
+}
+
+
+.wishlist-on {
+    background-color: var(--ecomm-heart);
+    transition: all .2s ease-in-out;
+    animation-name: hvr-icon-up;
+    animation-timing-function: ease-out;
+    animation-duration: 0.65s;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 10rem;
+    box-shadow: 0 0 .6rem rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .35s ease-in-out;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+
+    svg {
+        transition: all .2s ease-in-out;
+        fill: white!important;
+    }
+}
+
+@include breakpointAt(breakEarlySingleCol) {
+
+    .wishlist-link, .wishlist-on {
+        width: 5.5rem;
+        height: 5.5rem;
+
+        &__wishlist-icon {
+            width: 3.2rem;
+        }
+    } 
+}
+
+
+// Bounce animation for Wislist
+@keyframes hvr-icon-up {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-6px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+#alert {
+    position: fixed;
+    left: 50%;
+    z-index: 9999;
+
+    .alert-container {
+        background-color: #fff;
+        padding: 2.25rem 3rem;
+        border-radius: .6rem;
+        box-shadow: 0 .2rem 1rem .4rem rgba(0, 0, 0, .12);
+        position:relative; 
+        left: -50%;
+
+        #alert-title {
+            font-size: 1.8rem;
+            font-weight: $book;
+            margin-bottom: .6rem;
+        }
+
+        #alert-message {
+            font-size: 1.4rem;
+            color: $faded-text;
+        }
+    }
+}
+
+.alert-error {
+    border-top: .3rem solid #ff194a;
+}
+
+.alert-success {
+    border-top: .3rem solid #00d478;
+}
+
+
+// Modal animations
+#alert .slide-in {
+    animation: modal-slide-down .33s cubic-bezier(.19, 1, .22, 1);
+}
+
+#alert .fade-out {
+    animation: modal-slide-up .33s cubic-bezier(.785, .135, .15, .86);
+}
+
+@keyframes modal-slide-down {
+    
+    0% {
+        top: 30%;
+        transform: translate(-50%, -50%);
+        opactiy: 1;
+    }
+
+    100% {
+        top: 100%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+@keyframes modal-slide-up {
+
+    0% {
+        top: 0%;
+        transform: translate(-50%, -100%);
+        filter: blur(2px);
+        opactiy: 0;
+    }
+
+    99% {
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opactiy: 1;
+    }
+}
+
+
+
+

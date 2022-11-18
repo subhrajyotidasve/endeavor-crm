@@ -1,0 +1,212 @@
+.banner {
+
+    &--guarantee {
+        background: url('/_/img/support/guarantee/banner.jpg') 90% center no-repeat;
+        background-size: cover;
+    }
+}
+
+.lower-banner {
+
+    &--guarantee {
+        text-align: center;
+    }
+
+    &__link {
+        @include button-pill($main-copy, #fff, 1.2rem 3rem 1.2rem 3rem, $selection-colour, #fff, #fff, $selection-colour, #fff);
+    }
+}
+
+.answers {
+
+    &__article {
+        margin-top: 4rem;
+        padding-bottom: 4rem;
+        border-bottom: .15rem solid lighten($borders, 3);
+        position: relative;
+    }
+
+    &__h2 {
+        font-size: $main-head;
+    }
+
+    &__h3 {
+        font-size: $sub-head;
+        padding-bottom: $under-header;
+
+        @include breakpointAt(mobileNav) {
+
+            &--rwd-break {
+                display: block;
+            }
+        }
+    }
+
+    &__copy {
+        font-size: 1.6rem;
+        line-height: $main-copy-height;
+        max-width: 90rem;
+
+        &--strong {
+            font-weight: $medium;
+        }
+
+        &--vPad {
+            padding-top: 2.5rem;
+        }
+    }
+
+    &__list {
+        padding-top: 2.5rem;
+    }
+
+    &__list-item {
+        font-size: $main-copy;
+        line-height: $main-copy-height;
+        max-width: 90rem;
+
+        &:not(:last-of-type) {
+            padding-bottom: 2rem;
+        }
+
+        &--link {
+            font-weight: $medium;
+            color: $accent-teal;
+            border-bottom: .15rem dotted currentColor;
+
+            &:focus, &:hover {
+                border-bottom: .15rem solid currentColor;;
+            }
+        }
+
+        &--break {
+            margin-top: 2rem;
+        }
+    }
+
+    &__link {
+        position: absolute;
+        right: 0;
+        bottom: 1rem;
+        font-size: 1.4rem;
+        font-weight: $book;
+    }
+}
+
+.contact-strip {
+    background-color: var(--light-accessories);
+    color: black;
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 5rem;
+        padding-bottom: 2.5rem;
+
+        & > div:first-child {
+            position: relative;
+
+            &::after {
+                content: "";
+                width: .125rem;
+                height: 100%;
+                background-color: black;
+                position: absolute;
+                right: 3rem;
+                top: 0;
+            }
+
+            @include breakpointAt(xlarge) {
+                border-right: .15rem solid #fff;
+
+                &::after {
+                    content: none;
+                }
+            }
+
+            @include breakpointAt(small) {
+                border-right: none;
+            }
+        }
+    }
+
+    &__h3 {
+        font-size: $main-head;
+        padding-bottom: $under-header-large;
+    }
+
+    &__copy {
+        font-size: $secondary-copy;
+        line-height: $sec-copy-height;
+        max-width: 47rem;
+        margin-bottom: 4rem;
+        margin-right: 1rem;
+
+        &--strong {
+            font-weight: $medium;
+        }
+
+        &--rwd-break {
+            display: inline-block;
+        }
+    }
+
+    &__inline-link {
+
+        &:link, &:visited {
+            color: currentColor;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__inner-wrap {
+        display: flex;
+        align-items: center;
+
+        @include breakpointAt(medium) {
+            flex: 0 0 100%;
+
+            &:first-child {
+                margin-bottom: 2.5rem;
+            }
+        }
+    }
+
+    &__icon {
+        fill: black;
+        width: 6.75rem;
+        height: auto;
+        margin-right: 1.5rem;
+
+        @include breakpointAt(large) {
+            width: 5rem;
+        }
+    }
+
+    &__inside-wrap {
+        margin-right: 5rem;
+
+        @include breakpointAt(xlarge) {
+            margin-right: 2rem;
+        }
+    }
+
+    &__h4 {
+        font-size: $main-copy;
+        font-weight: $medium;
+        padding-bottom: .25rem;
+    }
+
+    &__contact-link {
+        font-size: $main-copy;
+    }
+
+    &__link {
+        @include button-pill($main-copy, black, 1rem 3rem 1rem 3rem, black, white, var(--light-accessories), black, black);
+        margin-top: -1rem;
+    }
+}

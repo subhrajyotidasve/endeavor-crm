@@ -1,0 +1,257 @@
+.my-account-form {
+
+    &__set {
+
+        &--password {
+            display: none;
+        }
+
+        &--prefs {
+            border-top: .15rem solid var(--ca-stroke);
+            margin-top: .3rem;
+            padding-top: 3.5rem;
+        }
+    }
+
+    &__legend {
+        display: none;
+    }
+
+    &__side-by-side {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
+        grid-gap: 2rem;
+    }
+
+    &__delivery-note {
+        padding-bottom: 1.5rem;
+    }
+
+    &__input-wrap {
+        margin-bottom: 2rem;
+        width: 100%;
+        position: relative;
+
+        &--toggle {
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row-reverse;
+            align-items: center;
+            margin-bottom: 4.5rem;
+
+            &:not(:last-child) {
+                margin-bottom: 3.5rem;
+            }
+        }
+
+        &--marketing-prefs {
+            margin-bottom: 0;
+            justify-content: flex-end;
+            width: auto;
+        }
+    }
+
+    &__button-wrap {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__copy {
+        max-width: 70rem;
+        line-height: 2.2rem;
+        padding-bottom: 3.5rem;
+
+        &--link:link {
+            color: var(--ca-confirm);
+            font-weight: $bold;
+            border: none;
+
+            &:hover {
+                border: none;
+            }
+        }
+    }
+
+    &__label {
+        display: block;
+        font-weight: $book;
+        font-size: 1.4rem;
+        padding-bottom: .4rem;
+
+        &--toggle {
+            margin-left: 2rem;
+            line-height: 2rem;
+            cursor: auto;
+        }
+
+        &--link {
+            color: var(--ca-confirm);
+            font-weight: $bold;
+            border: none;
+        }
+
+        &--select {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                width: 2.1rem;
+                height: 1.6rem;
+                background: url('/_/img/svg/icon-ca-arrow.svg') center no-repeat;
+                background-size: contain;
+                position: absolute;
+                right: 1.4rem;
+                bottom: 2rem;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__input {
+        width: 100%;
+        border-radius: .4rem;
+        background-color: white;
+        border: .3rem solid #e7e7e7;
+        font-size: 1.6rem;
+        font-weight: $book;
+        line-height: 4.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        appearance: none;
+        -webkit-text-stroke-width: inherit;
+        transition: border-color .5s ease-in-out;
+
+        &--select {
+            margin-top: .5rem;
+            cursor: pointer;
+            width: 9.5rem;
+        }
+
+        &:hover {
+            border-color: var(--ca-confirm);
+            transition: border-color .2s ease-in-out;
+        }
+
+        &:focus {
+            border-color: var(--ca-confirm);
+            box-shadow: 0 0 .4rem rgba(0, 123, 252, .5);
+            outline: none;
+            font-weight: $medium;
+        }
+
+        &--error {
+            border: 3px solid red;
+        }
+    }
+
+    // Slide switch
+    &__switch {
+        position: relative;
+        display: inline-block;
+        width: 6rem;
+        height: 3.4rem;
+        flex-shrink: 0;
+    }
+
+    &__slide-checkbox {
+        opacity: 0;
+        width: 0;
+        height: 0;
+
+        &:checked + .my-account-form__slider {
+            background-color: #2196F3;
+        }
+
+        &:checked + .my-account-form__slider {
+
+            &::before {
+                transform: translateX(2.6rem);
+            }
+        }
+    }
+
+    &__slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color:#e4e4e4;
+        transition: .4s;
+
+        &::before {
+            position: absolute;
+            content: "";
+            height: 2.6rem;
+            width: 2.6rem;
+            left: .4rem;
+            bottom: .4rem;
+            background-color: white;
+            box-shadow: 0 0 .4rem rgba(0, 0, 0, .4);
+            transition: .4s;
+        }
+
+        &--round {
+            border-radius: 5rem;
+
+            &::before {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &__reveal-link {
+        display: inline-block;
+        cursor: pointer;
+        text-decoration: underline;
+        float: right;
+        font-size: 1.2rem;
+        font-weight: $book;
+        padding: .5rem 0 1rem 0;
+    }
+}
+
+// Change colour of error validation messages
+label.error {
+    color: var(--ca-confirm);
+}
+
+// Placeholder styles
+::-webkit-input-placeholder {
+    color: #a8a8a8;
+    font-family: inherit;
+    font-size: 1.6rem;
+}
+
+::-moz-placeholder {
+    color: #a8a8a8;
+    font-family: inherit;
+    font-size: 1.6rem;
+}
+
+:-ms-input-placeholder {
+    color: #a8a8a8;
+    font-family: inherit;
+    font-size: 1.6rem;
+}
+
+:-moz-placeholder {
+    color: #a8a8a8;
+    font-family: inherit;
+    font-size: 1.6rem;
+}
+
+// Media queries
+@include breakpointAt(belowMobileNav) {
+
+    .my-account-form {
+
+        &__label {
+            font-size: 1.6rem;
+        }
+    }
+}

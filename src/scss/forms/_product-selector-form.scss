@@ -1,0 +1,90 @@
+// Form styles for Folding Bed Selector page
+.lower-banner {
+
+    &__legend {
+        font-size: 1.8rem;
+        font-weight: $medium;
+        padding-bottom: 1rem;
+    }
+
+    // Style our radio buttons
+    &__label {
+        display: block;
+        position: relative;
+        padding-left: 2.5rem;
+        margin-bottom: 1.2rem;
+        cursor: pointer;
+        user-select: none;
+        font-size: $main-copy;
+
+        &--caps {
+            text-transform: uppercase;
+        }
+
+        &--single-options {
+            margin-bottom: 0;
+        }
+
+        &--bold {
+            font-weight: $bold;
+        }
+
+        &--highlight {
+            color: $accent-teal;
+            text-transform: uppercase;
+        }
+    }
+
+    // Hide default browser radio buttons
+    &__radio {
+        opacity: 0;
+        cursor: pointer;
+        position: absolute;
+
+        // Show the radio button dot based on the checked pseudo class
+        &:checked ~ .lower-banner__faux-radio {
+
+            &::after {
+                display: block;
+            }
+        }
+    }
+
+    // Create our custom radio button
+    &__faux-radio {
+        position: absolute;
+        top: .1rem;
+        left: 0;
+        height: 1.6rem;
+        width: 1.6rem;
+        background-color: #fff;
+        border-radius: 50%;
+
+        &:hover {
+            background-color: silver;
+        }
+
+        // Create the dot inside the radio button, which is hidden until checked
+        &::after {
+            content: "";
+            position: absolute;
+            display: none;
+            width: 1rem;
+        	height: 1rem;
+        	border-radius: 50%;
+        	background: $accent-teal;
+            @include center-it-both;
+        }
+
+        &--kids {
+
+            &:hover {
+                background-color: #5d4495;
+            }
+
+            &::after {
+                background: #03887d;
+            }
+        }
+    }
+}

@@ -1,0 +1,874 @@
+.customer-admin {
+    background-color: #f5f8fa;
+}
+
+.my-account {
+    max-width: 110rem;
+    margin: 0 auto;
+    font-weight: var(--light);
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+    &__copy {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        padding-bottom: 3rem;
+
+        &--link:link {
+            font-weight: $bold;
+            color: var(--ca-confirm);
+            border: none;
+
+            &:hover {
+                border: none;
+            }
+        }
+
+        &--no-bottom-padding {
+            padding-bottom: 0;
+        }
+
+        &--margin-top {
+            margin-top: 1rem;
+        }
+
+        &--lge-margin-top {
+            margin-top: 2rem;
+        }
+
+        &--small {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+        }
+
+        &--emphasise {
+            color: var(--ca-confirm);
+        }
+
+        &--shorten {
+            max-width: 42rem;
+        }
+    }
+
+    &__button {
+        background-color: var(--ca-confirm);
+        color: white;
+        font-weight: $medium;
+        font-size: 1.5rem;
+        padding: 1.5rem 3rem;
+        cursor: pointer;
+        border: none;
+        border-radius: .4rem;
+        display: inline-block;
+        transition: box-shadow .6s ease-in-out;
+        text-align: center;
+
+        &--margin-top {
+            margin-top: 2rem;
+        }
+
+        &--block {
+            display: block;
+            text-align: center;
+        }
+
+        &:hover, &:focus {
+            box-shadow: 0 0 .7rem rgba(0, 123, 252, .6);
+            transition: box-shadow .2s ease-in-out;
+        }
+    }
+}
+
+// Grid used on all pages with side navigation
+.my-account-grid-wrap {
+    display: grid;
+    grid-template-columns: .3fr .7fr;
+    grid-gap: 4rem;
+    padding: 6rem 0 0 0;
+}
+
+// Header
+.my-account-head {
+    border-bottom: .2rem solid var(--ca-stroke);
+    padding-bottom: .75rem;
+    margin-bottom: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &--with-breadcrumb {
+        margin-bottom: 4rem;
+    }
+
+    &__h1 {
+        font-size: 3rem;
+        font-weight: $light;
+        color: inherit;
+        margin: 0;
+        position: relative;
+        
+        &::after {
+            content: "";
+            width: 100%;
+            height: .4rem;
+            background-color: var(--ca-confirm);
+            position: absolute;
+            left: 0;
+            bottom: -1.03rem;
+            border-radius: .2rem;
+        }
+    }
+
+    &__avatar-wrap {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &__avatar {
+        width: 3rem;
+        fill: #aeaeae;
+    }
+
+    &__name {
+        font-size: 1.75rem;
+        font-weight: inherit;
+        margin-left: 1.25rem;
+    }
+}
+
+// Breadcrumb nav
+.my-account-breadcrumb {
+    margin-top: 2rem;
+
+    &__list {
+        display: flex;
+    }
+
+    &__list-item {
+        position: relative;
+        font-size: 1.6rem;
+        font-weight: $medium;
+        text-transform: uppercase;
+
+        &:not(:last-child) {
+            padding-right: 4rem;
+
+            &::after {
+                content: "/";
+                font-size: 1rem;
+                position: absolute;
+                right: 2rem;
+                bottom: .4rem;
+            }
+        }
+
+        &:last-child {
+            color: #aaa;
+            font-weight: $book;
+        }
+    }
+
+    &__link {
+        
+        &:link {
+            text-decoration: none;
+        }
+    }
+}
+
+// My account panel
+.my-account-panel {
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(23.4rem, 1fr));
+        grid-column-gap: 4rem;
+        grid-row-gap: 5rem;
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5.5rem 0;
+        background-color: white;
+        box-shadow: 0 0 1.5rem rgba(0, 0, 0, .1);
+        border-radius: .5rem;
+        font-size: 1.9rem;
+        font-weight: $book;
+        transition: all .6s ease-in-out;
+
+        &:hover {
+            background-color: var(--ca-confirm);
+            box-shadow: 0 0 1.5rem rgba(0, 123, 252, .45);
+            color: white;
+            text-decoration: none;
+            transition: all .2s ease-in-out;
+
+            svg {
+                fill: white;
+                transition: fill .2s ease-in-out;
+            }
+        }
+    }
+
+    &__icon {
+        width: auto;
+        height: 5.5rem;
+        margin-bottom: 1.25rem;
+        fill: var(--ca-confirm);
+        transition: fill .6s ease-in-out;
+    }
+}
+
+// Side bar nav
+.my-account-nav {
+    background-color: white;
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, .1);
+    border-radius: .4rem;
+    padding: 3rem 0 6rem 0;
+
+    &__list-item {
+        padding: 0 2rem;
+        transition: background-color .6s ease-in-out;
+        font-size: 1.6rem;
+        font-weight: $book;
+
+        &--active {
+            background-color: rgba(231, 240, 250, .7);
+        }
+        
+        &:first-child {
+            font-weight: $bold;
+        }
+
+        &:hover {
+            background-color: rgba(231, 240, 250, .7);
+            transition: background-color .2s ease-in-out;
+        }
+
+        &:last-of-type a {
+            border: none;
+        }
+    }
+
+    &__link {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1.4rem 0;
+        border-bottom: .15rem solid var(--ca-stroke);
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__icon {
+        height: 3rem;
+        fill: var(--ca-confirm);
+        margin-right: 1.75rem;
+    }
+}
+
+
+// Display addresses
+.my-account-address {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 5rem;
+
+    &__wrap {
+        background-color: white;
+        box-shadow: 0 0 1.5rem rgba(0, 0, 0, .1);
+        border-radius: .5rem;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &--new {
+            padding: 0;
+            display: block;
+        }
+
+        &--primary {
+            
+        }
+    }
+
+    &__address {
+        margin-bottom: 2rem;
+        line-height: 2.8rem;
+        font-weight: $light;
+
+        &::first-line {
+            font-weight: $bold;
+        }
+    }
+
+    &__link {
+        margin-right: 1rem;
+        font-size: 1.3rem;
+        display: inline-block;
+        text-decoration: underline;
+    }
+
+    &__add-new-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-size: 1.8rem;
+        border: .2rem dashed #d1d1d1;
+        border-radius: .5rem;
+        transition: border-color .5s ease-in-out;
+
+        &:hover {
+            border-color: var(--ca-confirm);
+            transition: border-color .2s ease-in-out;
+            box-shadow: 0 0 1rem rgba(0, 123, 252, .2);
+            text-decoration: none;
+        }
+    }
+
+    &__icon {
+        fill: var(--ca-confirm);
+        width: 5rem;
+        margin-bottom: 1.25rem;
+    }
+}
+
+// My account footer
+.my-account-footer {
+    margin-top: 5rem;
+    border-bottom: .2rem solid var(--ca-stroke);
+    text-align: right;
+    padding-bottom: .35rem;
+
+    &__link {
+        font-size: 1.6rem;
+        position: relative;
+        
+        &:hover {
+            text-decoration: none;
+        }
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: .4rem;
+            background-color: var(--ca-confirm);
+            position: absolute;
+            left: 0;
+            bottom: -.6rem;
+            border-radius: .2rem;
+        }
+    }
+}
+
+// Order history section
+.my-account-orders {
+
+    &__order {
+        background-color: white;
+        border-radius: .4rem;
+        box-shadow: 0 0 1.5rem rgba(0, 0, 0, .1);
+
+        &:not(:last-of-type) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__header {
+        background-color: var(--ca-confirm);
+        color: white;  
+        padding: 1.4rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top-left-radius: .4rem;
+        border-top-right-radius: .4rem;
+
+        &--multi-prod{
+            border-radius:0;
+            margin-left:2rem;
+            margin-right:2rem;
+        }
+    }
+
+    &__h2, &__number {
+        font-size: 1.8rem;
+        font-weight: $book;
+    }
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 1.25rem 0 1.25rem 0;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        border-bottom: .1rem solid var(--ca-stroke);
+    }
+
+    &__thumb {
+        max-width: 25rem;
+        pointer-events: none;
+    }
+
+    &__specifics {
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+        font-weight: $book;
+        margin-bottom: -1rem;
+
+        &--total {
+            font-weight: $medium;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1.5rem 2rem 1.75rem 2rem;
+    }
+
+    &__footer-link {
+        font-size: 1.4rem;
+        font-weight: $medium;
+        display: inline-block;
+        padding: 1rem 2rem;
+        border: .25rem solid var(--ca-confirm);
+        border-radius: .4rem;
+        color: var(--ca-confirm);
+        transition: all .5s ease-in-out;
+        cursor: pointer;
+
+        &:first-of-type {
+            margin-right: 1.5rem;
+        }
+
+        &:hover {
+            background-color: var(--ca-confirm);
+            color: white;
+            transition: all .2s ease-in-out;
+        }
+
+        // This is class is removed via JS
+        &--disabled {
+            border-color: #d6d6d6;
+            color: #d6d6d6;
+            pointer-events: none;
+        }
+    }
+
+    &__status {
+        border: .25rem solid var(--ca-dispatched);
+        font-weight: $medium;
+        color: var(--ca-dispatched);
+        border-radius: 10rem;
+        padding: 1.1rem 2rem;
+        font-size: 1.4rem;
+
+        &--checkout {
+            border-color: var(--ca-checkout);
+            color: var(--ca-checkout);
+        }
+
+        &--refunded {
+            border-color: var(--ca-refunded);
+            color: var(--ca-refunded);
+        }
+
+        &--paid {
+            border-color: var(--ca-paid);
+            color: var(--ca-paid);
+        }
+
+        &--cancelled {
+            border-color: var(--ca-cancelled);
+            color: var(--ca-cancelled);
+        }
+    }
+
+    &__foot-note {
+        padding-top: 1rem;
+    }
+}
+
+// Order history delivery details section
+.my-account-delivery {
+
+    &__container {
+        background-color: white;
+        border-radius: .4rem;
+        box-shadow: 0 0 1.5rem rgba(0, 0, 0, .1);
+        padding: 1.5rem 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 3rem;
+
+        &:not(:last-of-type) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__h2 {
+        font-size: 1.6rem;
+        font-weight: $book;
+        border-bottom: .15rem solid var(--ca-stroke);
+        padding-bottom: .75rem;
+        margin-bottom: 1rem;
+    }
+
+    &__list {
+
+        &:not(:last-of-type) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__list-item {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        font-weight: $book;
+
+        &--head {
+            font-weight: $bold;
+        }
+    }
+}
+
+// Wishlist section
+.my-account-wishlist {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(min-content, max-content);
+    grid-gap: 3rem;
+
+    &__product {
+        box-shadow: 0 0 1.5rem rgba(0, 0, 0, .1);
+        background-color: white;
+        border-radius: .4rem;
+        padding: 2rem;
+        position: relative;
+    }
+
+    &__close {
+        width: 2.5rem;
+        height: 2.5rem;
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+        display: block;
+    }
+
+    &__h2 {
+        font-size: 1.6rem;
+        font-weight: $book;
+        border-bottom: .15rem solid var(--ca-stroke);
+        padding-bottom: .75rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.5rem 0 1.5rem 0;
+    }
+
+    &__stock-wrap {
+        font-size: 1.4rem;
+    }
+
+    &__stock {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__icon {
+        fill: var(--ca-dispatched);
+        margin-right: .5rem;
+        width: 1.5rem;
+    }
+
+    &__price {
+        font-weight: $bold;
+        margin-top: 1rem;
+        display: inline-block;
+    }
+
+    &__flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 1.5rem;
+    }
+}
+
+// Marketing preferences
+.my-account-marketing {
+
+    &__pref {
+        box-shadow: 0 0 1.5rem rgba(0, 0, 0, .1);
+        background-color: white;
+        border-radius: .4rem;
+        padding: 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__icon {
+        fill: var(--ca-confirm);
+        width: 30rem;
+        margin-right: 2rem;
+    }
+
+    &__h2 {
+        font-size: 2.2rem;
+        font-weight: $book;
+        padding-bottom: .5rem;
+    }
+
+    &__copy {
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        margin-bottom: 2rem;
+
+        &--link:link {
+            color: var(--ca-confirm);
+            font-weight: $bold;
+            border-bottom: none;
+
+            &:hover {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+// Used on wishlist page
+.generic-shop-head {
+
+    &__title {
+        font-size: 3rem;
+        padding-bottom: .75rem;
+    }
+
+    &__copy {
+        
+        &:not(:last-child) {
+            margin-bottom: .35rem;
+        }
+    }
+}
+
+// Media queries
+@include breakpointAt(mobileNav) {
+
+    .my-account {
+        padding-top: 6rem;
+        padding-bottom: 6rem;    
+    }
+
+    .my-account-head {
+        margin-bottom: 6rem;
+    }
+
+    // Order history section
+    .my-account-orders {
+
+        &__footer {
+            flex-wrap: wrap;
+        }
+
+        &__nav {
+            flex-basis: 100%;
+            display: flex;
+        }
+
+        &__footer-link {
+            text-align: center;
+            flex: 1 0 calc(50% - 2.75rem);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__status {
+            flex-basis: 100%;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+    }
+
+    // Footer 
+    .my-account-footer {
+        text-align: center;
+
+        &__link {
+            font-size: 2rem;
+        }
+    }
+}
+
+@include breakpointAt(belowMobileNav) {
+
+    // Overall wrapping element
+    .my-account {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
+
+    // Main grid
+    .my-account-grid-wrap {
+        display: block;
+        padding: 4rem 0 0;
+    }
+
+    // Side nav
+    .my-account-nav {
+        display: none;
+    }
+
+    // Breadcrumb
+    .my-account-breadcrumb {
+        
+        &__list {
+            justify-content: center;
+        }
+
+        &__list-item {
+            font-size: 1.8rem;
+
+            &:not(:last-child) {
+
+                &::after {
+                    bottom: .6rem;
+                    right: 1.85rem;
+                }
+            }
+        }
+    }
+   
+    // Header 
+    .my-account-head {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 1.5rem;
+        margin-bottom: 5rem;
+
+        &__h1 {
+            margin-top: 2.5rem;
+            font-size: 3.5rem;
+
+            &::after {
+                bottom: -1.8rem;
+            }
+        }
+
+        &__avatar-wrap {
+            flex-basis: 100%;
+            justify-content: center;
+            order: -1;
+        }
+
+        &__name {
+            font-size: 2rem;
+        }
+
+        &__avatar {
+            width: 3.5rem;
+        }
+    }
+
+    // Dashboard
+    .my-account-panel {
+        
+        &__list {
+            grid-row-gap: 3rem;
+        }
+
+        &__link {
+            font-size: 2.2rem;
+        }
+
+        &__icon {
+            height: 6.5rem;
+        }
+    }
+
+    // Address section
+    .my-account-address {
+        grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+        grid-gap: 3rem;
+    }
+}
+
+@include breakpointAt(smaller) {
+
+    .my-account-orders {
+
+        &__header {
+            flex-wrap: wrap;
+        }
+
+        &__h2 {
+            flex-basis: 100%;
+            padding-bottom: .5rem;
+        }
+
+        &__body {
+            display: block;
+            text-align: center;
+        }
+
+        &__specifics {
+            text-align: left;
+            line-height: 2.4rem;
+            margin-bottom: 0;
+            padding-left: 1.25rem;
+        }
+    }
+}
+
+@include breakpointAt(special) {
+
+    .my-account {
+
+        &__button {
+            display: block;
+            width: 100%;
+            padding: 2rem 3.5rem;
+            font-size: 1.6rem;
+        }
+    }
+
+    .my-account-wishlist {
+        grid-template-columns: 1fr;
+    }
+
+    // Marketing prefrences section
+    .my-account-marketing {
+
+        &__pref {
+            display: block;
+        }
+
+        &__icon {
+            width: 7rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+}

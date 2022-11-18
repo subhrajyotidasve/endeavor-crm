@@ -1,0 +1,372 @@
+// See about scss for generic intro styles
+.key-facts {
+
+    &__flex-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__copy {
+        font-size: $secondary-copy;
+        line-height: $sec-copy-height;
+        padding-top: $vSpace-small;
+        flex: 1 0 auto;
+    }
+}
+
+.locally {
+    display: flex;
+
+    @include breakpointAt(small) {
+        display: block;
+    }
+
+    &__img {
+        flex: 0 0 50%;
+        background: url('/_/img/products/contract/flag.jpg') center no-repeat;
+        background-size: cover;
+
+        @include breakpointAt(small) {
+            height: 12.5rem;
+        }
+    }
+
+    &__text {
+        flex: 0 0 50%;
+        background: $contract-blue;
+        color: #fff;
+        padding: 4rem;
+
+        @include breakpointAt(medium) {
+            padding: 2.5rem;
+        }
+    }
+
+    &__h3 {
+        font-size: $minor-head;
+        padding-bottom: $under-header;
+    }
+
+    &__copy {
+        font-size: $secondary-copy;
+        line-height: $sec-copy-height;
+        max-width: 70rem;
+    }
+}
+
+.manufacturing {
+    background: #a5b1bd;
+    color: #fff;
+    padding: 6rem 0 5.5rem 0;
+
+    @include breakpointAt(medium) {
+        padding: 4rem 0 3rem 0;
+    }
+
+    &__header-wrap {
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3.5rem;
+    }
+
+    &__h3 {
+        font-size: 10rem;
+        line-height: 9.5rem;
+        font-weight: $bold;
+
+        &--span {
+            display: block;
+        }
+
+        @include breakpointAt(medium) {
+            font-size: 7rem;
+            line-height: 6.5rem;
+        }
+
+        @include breakpointAt(small) {
+            font-size: 5rem;
+            line-height: 4.5rem;
+        }
+
+        @include breakpointAt(smallest) {
+            font-size: 3.5rem;
+            line-height: 3rem;
+        }
+    }
+
+    &__icon {
+        fill: #fff;
+        width: auto;
+        height: 26.25rem;
+
+        @include breakpointAt(medium) {
+            height: 17.75rem;
+        }
+
+        @include breakpointAt(small) {
+            height: 13rem;
+        }
+
+        @include breakpointAt(smallest) {
+            height: 8.5rem;
+        }
+    }
+
+    &__list {
+        margin-bottom: 3rem;
+        line-height: 3.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include breakpointAt(small) {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 30rem;
+        }
+    }
+
+    &__list-item {
+        font-size: $sub-head;
+        padding: 0 2rem;
+
+        &--span {
+            font-weight: $bold;
+            padding-right: .75rem;
+        }
+
+        @include breakpointAt(xlarge) {
+            padding: 0 .8rem;
+        }
+
+        @include breakpointAt(large) {
+            flex: 0 0 35%;
+
+            &:last-child {
+                flex-basis: 70%;
+            }
+        }
+
+        @include breakpointAt(mobileNav) {
+            flex: 0 0 45%;
+
+            &:last-child {
+                flex-basis: 90%;
+            }
+        }
+    }
+
+    &__copy {
+        font-size: $secondary-copy;
+        line-height: $sec-copy-height;
+        max-width: 75rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.contract-story {
+    background: $contract-blue;
+    color: #fff;
+    padding: 4.5rem 0 4rem 0;
+
+    &__row {
+        max-width: 95rem;
+    }
+
+    &__h3 {
+        font-size: $minor-head;
+        padding-bottom: $under-header;
+
+        &--span {
+            padding-right: .75rem;
+            font-weight: $bold;
+        }
+    }
+
+    &__copy {
+        font-size: $secondary-copy;
+        line-height: $sec-copy-height;
+
+        &:not(:last-child) {
+            padding-bottom: 2.5rem;
+        }
+    }
+}
+
+.image-strip {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__img-wrap {
+        flex: 0 0 25%;
+        max-height: 32rem;
+
+        @include breakpointAt(mobileNav) {
+            flex: 0 0 50%;
+        }
+
+        @include breakpointAt(tiny) {
+            flex: 0 0 100%;
+        }
+    }
+
+    &__img {
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.data {
+
+    &__flex-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__h4 {
+        font-size: $minor-head;
+        margin-bottom: 1.75rem;
+
+        &--rwd-break {
+            display: inline-block;
+        }
+    }
+
+    &__list-item {
+        font-size: $secondary-copy;
+        line-height: $sec-copy-height;
+        border-bottom: .15rem solid $borders;
+        padding-bottom: 1.5rem;
+
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.footer-image {
+
+    @include breakpointAt(medium) {
+        display: none;
+    }
+
+    &__img {
+        width: 57rem;
+        height: auto;
+        display: block;
+        margin-top: -4rem;
+    }
+}
+
+.awards-footer {
+    background: #00020b url('/_/img/products/contract/footer-earth.jpg') center top no-repeat;
+    background-size: cover;
+    color: #fff;
+    overflow: hidden;
+
+    @include breakpointAt(smallest) {
+        background-position: center -200%;
+        background-size: auto;
+    }
+
+    @include breakpointAt(tiny) {
+        background-position: center -100%;
+    }
+
+    &__row {
+        text-align: center;
+        max-width: 90rem;
+        padding-top: 38rem;
+        padding-bottom: 8rem;
+
+        @include breakpointAt(mobileNav) {
+            padding-top: 14rem;
+            padding-bottom: 4rem;
+        }
+    }
+
+    &__icon {
+        fill: #998650;
+        width: 12rem;
+        height: auto;
+    }
+
+    &__h2 {
+        font-size: 6rem;
+        line-height: 5.5rem;
+        font-weight: $light;
+        margin-bottom: 3rem;
+
+        @include breakpointAt(small) {
+            font-size: 4rem;
+            line-height: 3.5rem;
+        }
+
+        &--emphasise {
+            color: #998650;
+        }
+
+        &--rwd-break {
+            display: inline-block;
+        }
+    }
+
+    &__copy-wrap {
+        display: flex;
+
+        @include breakpointAt(small) {
+            display: block;
+        }
+    }
+
+    &__copy-wrap-inner {
+        flex: 0 0 50%;
+
+        &:first-of-type {
+            padding-right: 2.5rem;
+        }
+
+        &:last-of-type {
+            padding-left: 2.5rem;
+        }
+
+        @include breakpointAt(mobileNav) {
+
+            &:first-of-type {
+                padding-right: 1.25rem;
+            }
+
+            &:last-of-type {
+                padding-left: 1.25rem;
+            }
+        }
+
+        @include breakpointAt(small) {
+
+            &:first-of-type {
+                padding-right: 0;
+            }
+
+            &:last-of-type {
+                padding-left: 0;
+            }
+        }
+    }
+
+    &__copy {
+        font-size: $secondary-copy;
+        line-height: $sec-copy-height;
+        text-align: left;
+        padding-bottom: 2rem;
+
+
+        &--emphasise {
+            color: #998650;
+        }
+    }
+}

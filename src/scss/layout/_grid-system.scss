@@ -1,0 +1,225 @@
+.outer-wrap {
+
+    &--clear-fix {
+        @extend %clear-fix;
+    }
+
+    &--vpadding-max { 
+        padding-top: 18rem;
+    }
+
+    &--btm-margin {
+        margin-bottom: 4rem;
+    }
+
+    &--btm-margin-medium {
+        margin-bottom: 6rem;
+    }
+
+    &--btm-margin-large {
+        margin-bottom: 8rem;
+    }
+
+    &--btm-margin-max {
+        margin-bottom: 10rem;
+    }
+
+    @include breakpointAt(mobileNav) {
+
+        &--btm-margin-large {
+            margin-bottom: 6rem;
+        }
+
+        &--btm-margin-max {
+            margin-bottom: 8rem;
+        }
+    }
+}
+
+.row {
+    max-width: 134.3rem;
+    margin: 0 auto 4rem auto;
+    padding: 0 $gutter-large;
+
+    &--v-narrow {
+        max-width: 90rem;
+    }
+
+    &--narrow {
+        max-width: 120rem;
+    }
+
+    &--medium {
+        max-width: 142rem;
+    }
+
+    &--wide {
+        max-width: 160rem;
+        padding: 0 5rem;
+
+        @include breakpointAt(forNegativeMargins) {
+            padding: 0 $gutter-large;
+        }
+    }
+
+    &--ultra-wide {
+        max-width: 165rem;
+        padding: 0 2.5rem;
+    }
+
+    &--clear-fix {
+        @extend %clear-fix;
+    }
+
+    // Add 4rem of vertical padding when needed
+    &--top-padding {
+        padding-top: $vSpace-xlarge;
+    }
+
+    &--top-padding-max {
+        padding-top: 6rem;
+    }
+
+    // Add equal amount of padding to both top and bottom, such as the accent blue coloured accessories section on product detail page
+    &--vpadding {
+        padding-top: $vSpace-xlarge;
+        padding-bottom: $vSpace-xlarge;
+    }
+
+    &--vpadding-max {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+
+        @include breakpointAt(mobileNav) {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+    }
+
+    &--btm-margin-medium {
+        margin-bottom: 6rem;
+    }
+
+    &--btm-margin-large {
+        margin-bottom: 8rem;
+    }
+
+    // Add less bottom padding, for rows with a background colour using the flex grid, such as dimensions section of product detail page
+    &--vpadding-uneq {
+        padding-top: $vSpace-xlarge;
+        padding-bottom: 1.5rem;
+    }
+
+    &--vpadding-max-uneq {
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+    }
+
+    // Used for items like the selector banner on the product selector pages when we don't quite need 4rem equal padding
+    &--vpadding-shallow {
+        padding-top: $vSpace-large;
+        padding-bottom: 3.25rem;
+    }
+
+    // When we have a flex grid we reduce the gutter left and right by half as the padding on the items make up the remainding 1.25rem and reduce bottom margin to 1.5rem as 2.5rem comes from grid
+    &--has-flex-grid {
+        padding-left: $gutter-medium;
+        padding-right: $gutter-medium;
+        margin-bottom: 1.5rem;
+    }
+
+    &--no-bottom-margin {
+        margin-bottom: 0;
+    }
+}
+
+.col-1-of-2 {
+    flex-basis: calc((100% - 2.51rem * 2) / 2);
+}
+
+.col-1-of-3 {
+    flex-basis: calc((100% - 2.51rem * 3) / 3);
+
+    // Add some left padding for text only columns that look too close together otherwise
+    &--spaced-for-text {
+        padding-left: 8rem;
+
+        @include breakpointAt(medium) {
+            padding-left: 0;
+        }
+    }
+}
+
+.col-1-of-4 {
+    flex-basis: calc((100% - 2.51rem * 4) / 4);
+}
+
+.col-1-of-6 {
+    flex-basis: calc((100% - 2.51rem * 6) / 6);
+
+    &--spit-to-3 {
+
+        @include breakpointAt(xlarge) {
+            flex-basis: calc((100% - 2.51rem * 3) / 3);
+        }
+    }
+}
+
+.col-1-of-2, .col-1-of-3, .col-1-of-4, .col-1-of-6 {
+    margin: 0 $gutter-medium 2.5rem $gutter-medium;
+
+    &--center {
+        @extend %center-text;
+    }
+
+    // Needs flex: 1 0 auto adding to element you wish to grow to fit
+    &--eq-height {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &--no-bottom-margin {
+        margin-bottom: 0;
+    }
+
+    // Sometimes needed when you have text heavy sections prevents looking too busy
+    &--extra-btm-margin {
+
+        @include breakpointAt(small) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    // Used when we have a header in one column but not in another
+    &--top-padding {
+        padding-top: 3.75rem;
+
+        @include breakpointAt(small) {
+            padding-top: 0;
+        }
+    }
+
+    @include breakpointAt(medium) {
+        flex-basis: calc((100% - 2.51rem * 2) / 2);
+    }
+
+    @include breakpointAt(small) {
+        flex-basis: 100%;
+
+        &--end-at-2up {
+            flex-basis: calc((100% - 2.51rem * 2) / 2);
+        }
+    }
+
+    // Used when we need to break into two and single columns before the standard setting
+    &--break-early {
+        
+        @include breakpointAt(xlarge) {
+            flex-basis: calc((100% - 2.51rem * 2) / 2);
+        }
+
+        @include breakpointAt(breakEarlySingleCol) {
+            flex-basis: 100%;
+        }
+    }
+}

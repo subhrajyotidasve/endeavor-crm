@@ -1,0 +1,138 @@
+html {
+    font-size: 62.5%;
+
+    @include breakpointAt(large) {
+        font-size: 58%;
+    }
+
+    @include breakpointAt(medium) {
+        font-size: 56%;
+    }
+
+    @include breakpointAt(small) {
+        font-size: 54%;
+    }
+
+    @include breakpointAt(smallest) {
+        font-size: 50%;
+    }
+
+    @include breakpointAt(tiny) {
+        font-size: 48%;
+    }
+}
+
+// Global Typography
+body {
+	font-family: 'Poppins', sans-serif;
+    font-weight: $book;
+	color: $text;
+	-webkit-font-smoothing: subpixel-antialiased;
+    padding-top: 9rem;
+}
+
+// Skip to main content link
+.skip-link {
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    overflow: hidden;
+    top: -10px;
+}
+
+// Scroll to top of page button
+.scroll-me {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--electric-blue);
+    border-radius: 100rem;
+    position: absolute;
+    bottom: 5rem;
+    right: 3rem;
+
+    &__icon {
+        width: 3.25rem;
+        fill: currentcolor;
+        padding: 1.3rem .5rem;
+        pointer-events: none;
+    }
+
+    &:hover {
+        animation-name: hvr-icon-up;
+        animation-timing-function: ease-out;
+        animation-duration: 0.65s;
+        outline: 0;
+    }
+}
+
+h1 {
+    line-height: 4.4rem;
+
+    @include breakpointAt(xlarge) {
+        line-height: 3.8rem;
+    }
+
+    @include breakpointAt(mobileNav) {
+        line-height: 3.4rem;
+    }
+
+    @include breakpointAt(small) {
+        line-height: 2.4rem;
+    }
+}
+
+h2 {
+    font-size: 5rem;
+    font-weight: $black;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $book;
+    margin: 0;
+}
+
+p {
+    font-weight: $book;
+    font-size: 1.6rem;
+    margin: 0;
+
+	a:link,
+	a:visited {
+        @extend %std-copy-link;
+    }
+}
+
+ul, ol, dl, dt, dd {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-weight: $light;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+strong {
+	font-weight: $bold;
+}
+
+::-moz-selection {
+    background: $text;
+    color: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background: $text;
+    color: #fff;
+    text-shadow: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
